@@ -15,3 +15,6 @@ manage.py runserver
 http://localhost:8000/admin 创建用户， 赋予staff_status权限可以登录
 
 http://localhost:8000/school/students/ 查看student页面
+
+用户权限的详细解释
+http://www.cnblogs.com/esperyong/archive/2012/12/20/2825909.html
