@@ -1,8 +1,10 @@
 #coding=utf-8
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from school import models
 from django.db.models import Q
 from django.core.urlresolvers import resolve   #此方法可以将url地址转换成url的name
+
 
 def perm_check(request, *args, **kwargs):
     url_obj = resolve(request.path_info)
@@ -18,6 +20,8 @@ def perm_check(request, *args, **kwargs):
             url_args_list.append(str(url_args[i]))
         url_args_list = ','.join(url_args_list)
         #操作数据库
+        #is_authenticated()
+        # is_anonymous()
         get_perm = models.Permission.objects.filter(Q(url=url_name) and Q(per_method=url_method) and Q(argument_list=url_args_list))
         if get_perm:
             for i in get_perm:
@@ -38,9 +42,9 @@ def perm_check(request, *args, **kwargs):
     else:
         return False   #没有权限设置，默认不放过
 
-
 def check_permission(fun):    #定义一个装饰器，在views中应用
     def wapper(request, *args, **kwargs):
+        print(request.path)
         if perm_check(request, *args, **kwargs):  #调用上面的权限验证方法
             return fun(request, *args, **kwargs)
         return render(request, '403.html', locals())
