@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    table {border:1px blue solid;}
+    tr td {border:1px solid #999999;}
+    </style> 
+</head>
+<body>
+  <table>
+      <tr>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+      </tr>
+      {% for student_obj in students_obj %}
+      <tr>
+          <td>{{ student_obj.name }}</td>
+          <td>{{ student_obj.age }}</td>
+          <td>{{ student_obj.get_sex_display }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+</body>
+</html>
