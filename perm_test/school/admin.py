@@ -13,6 +13,11 @@ class StudentAdmin(admin.ModelAdmin):
     # filter_horizontal = ('authors',)      #从‘多选框’的形式改变为‘过滤器’的方式，水平排列过滤器，must be a ManyToManyField，且不能用于 ForeignKey字段，默认地，管理工具使用`` 下拉框`` 来展现`` 外键`` 字段
     # filter_vertical = ('authors',)        #同上，垂直排列过滤器
     # raw_id_fields = ('publisher',)        #将ForeignKey字段从‘下拉框’改变为‘文本框’显示
+    # 分组表单
+    #fieldsets = (
+        #('基本信息', {'fields': ('title', 'content', 'excerpt', 'publish_date','status', 'user', 'categories')}),
+        #('Meta Data', {'fields': ('alias', 'keywords', 'description')}),
+    #)    
 
 
 
