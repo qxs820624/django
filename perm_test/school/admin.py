@@ -23,3 +23,5 @@ class PermissionAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Student,StudentAdmin)
 admin.site.register(models.Permission,PermissionAdmin)
+admin.site.register(models.Tag)
+admin.site.register(models.Entry)

@@ -20,7 +20,6 @@ from django.contrib.auth import urls as auth_urls
  
  
 urlpatterns = [
-    #url(r'^accounts/login/$',login), 
     url(r'^accounts/', include(auth_urls, namespace='accounts')),
     url(r'^admin/', admin.site.urls),
     url(r'^school/', include('school.urls')),

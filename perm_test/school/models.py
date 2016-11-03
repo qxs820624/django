@@ -46,3 +46,52 @@ class Permission(models.Model):
             ('views_student_list', '查看学员信息表'),
             ('views_student_info', '查看学员详细信息'),
         )
+
+
+class Tag(models.Model):
+    name = models.CharField(u"标签名", max_length=30)
+    
+    def __str__(self):
+        return self.name
+    
+    def __unicode__(self):
+        return u'%s' % self.name
+    
+    class Meta:
+        verbose_name = '标签'
+        verbose_name_plural = verbose_name
+    
+class EntryManager(models.Manager):
+    def get_or_create(self, **kwargs):
+        defaults = kwargs.pop('defaults', {})
+        taglist = defaults.pop('taglist', {})
+        Entry.taglist = taglist
+        kwargs.update(defaults)
+        super(EntryManager, self).get_or_create(**kwargs)
+
+class Entry(models.Model):
+    title = models.CharField("标题", max_length=100)
+    pub_date = models.DateField("发布日期", blank=True, null=True)
+    content = models.TextField("正文")
+    tags = models.ManyToManyField(Tag)
+    taglist = []
+    objects = EntryManager()
+    
+    def __str__(self):
+        return self.title
+    
+    def __unicode__(self):
+        return u'%s' % self.title
+    
+    class Meta:
+        verbose_name = '文章'
+        verbose_name_plural = verbose_name
+
+    
+    def save(self, *args, **kwargs):
+        super(Entry, self).save()
+        for i in self.taglist:
+            p, created = Tag.objects.get_or_create(name=i)
+            self.tags.add(p) 
+        self.taglist = []
+
