@@ -1,0 +1,840 @@
+
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[14/Apr/2017 10:18:10] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[14/Apr/2017 10:18:12] "GET /cdb/admin/blog/author/ HTTP/1.0" 200 6354
+[14/Apr/2017 10:18:12] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:18:15] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[14/Apr/2017 10:18:16] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[14/Apr/2017 10:18:17] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:18:28] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[14/Apr/2017 10:18:29] "GET /cdb/admin/blog/tag/ HTTP/1.0" 200 5963
+[14/Apr/2017 10:18:30] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:18:31] "GET /cdb/admin/blog/tag/1/change/ HTTP/1.0" 200 6747
+[14/Apr/2017 10:18:31] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:18:31] "GET /cdb/static/admin/css/forms.css HTTP/1.0" 304 0
+[14/Apr/2017 10:18:32] "GET /cdb/static/admin/css/widgets.css HTTP/1.0" 304 0
+[14/Apr/2017 10:18:36] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[14/Apr/2017 10:18:38] "GET /cdb/admin/blog/tag/ HTTP/1.0" 200 5963
+[14/Apr/2017 10:18:38] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:18:40] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+Performing system checks...
+
+April 14, 2017 - 10:18:02
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[14/Apr/2017 10:20:28] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[14/Apr/2017 10:20:29] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[14/Apr/2017 10:20:30] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:20:33] "GET /cdb/admin/blog/blogs/add/ HTTP/1.0" 200 14803
+[14/Apr/2017 10:20:34] "GET /cdb/static/admin/js/SelectBox.js HTTP/1.0" 200 5204
+[14/Apr/2017 10:20:34] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 10:20:34] "GET /cdb/static/admin/js/SelectFilter2.js HTTP/1.0" 200 11202
+[14/Apr/2017 10:20:34] "GET /cdb/static/admin/img/icon-unknown.svg HTTP/1.0" 200 655
+[14/Apr/2017 10:20:34] "GET /cdb/static/admin/img/icon-unknown-alt.svg HTTP/1.0" 200 655
+[14/Apr/2017 10:20:34] "GET /cdb/static/admin/img/selector-icons.svg HTTP/1.0" 200 3291
+[14/Apr/2017 12:22:55] "GET /cdb/admin/ HTTP/1.0" 200 29900
+[14/Apr/2017 12:26:48] "GET /cdb/blog/ HTTP/1.0" 200 7552
+[14/Apr/2017 12:26:48] "GET /cdb/static/site/img/image/head_img_man.jpg HTTP/1.0" 304 0
+[14/Apr/2017 12:52:25] "GET /cdb/admin/ HTTP/1.0" 200 29900
+[14/Apr/2017 12:52:36] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[14/Apr/2017 12:52:36] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 12:52:39] "GET /cdb/admin/blog/blogs/1/change/ HTTP/1.0" 200 15120
+[14/Apr/2017 12:52:39] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 12:53:09] "POST /cdb/admin/blog/blogs/1/change/ HTTP/1.0" 302 0
+[14/Apr/2017 12:53:09] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8468
+[14/Apr/2017 12:53:09] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[14/Apr/2017 12:53:12] "GET /cdb/blog/ HTTP/1.0" 200 7547
+[14/Apr/2017 12:53:13] "GET /cdb/static/site/img/image/droplet_images.png HTTP/1.0" 200 5058
+Performing system checks...
+
+April 14, 2017 - 10:20:23
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+publish_time:2017-03-27 06:13:43.169897+00:00, id:2, title:Hello, body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, subTitle:你好, update_time:2017-04-13 12:33:00+00:00, blog_author_id:1, classification_id:1, blog_type:Txt, blog_ismarkdown:True, blog_clicknum:12, blog_like:123, _state:<django.db.models.base.ModelState object at 0x7f57850d1cf8>
+publish_time:2017-03-20 06:42:19.574297+00:00, id:1, title:first, body:test, blog_imgurl:http://img3.imgtn.bdimg.com/it/u=659041358,1350093, subTitle:hello how, update_time:2017-04-13 12:33:00+00:00, blog_author_id:1, classification_id:1, blog_type:Link, blog_ismarkdown:False, blog_clicknum:500, blog_like:10, _state:<django.db.models.base.ModelState object at 0x7f57850d1940>
+publish_time:2017-03-27 06:13:43.169897+00:00, id:2, title:Hello, body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, subTitle:你好, update_time:2017-04-13 12:33:00+00:00, blog_author_id:1, classification_id:1, blog_type:Txt, blog_ismarkdown:True, blog_clicknum:12, blog_like:123, _state:<django.db.models.base.ModelState object at 0x7f578517db00>
+publish_time:2017-03-20 06:42:19.574297+00:00, id:1, title:first, body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, subTitle:hello how, update_time:2017-04-13 12:33:00+00:00, blog_author_id:1, classification_id:1, blog_type:Link, blog_ismarkdown:False, blog_clicknum:500, blog_like:10, _state:<django.db.models.base.ModelState object at 0x7f57907a8ef0>
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[14/Apr/2017 14:08:40] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:08:41] "GET /cdb/static/bootstrap/css/bootstrap.min.css HTTP/1.0" 304 0
+[14/Apr/2017 14:08:41] "GET /cdb/static/site/img/logo.png HTTP/1.0" 200 2631
+Performing system checks...
+
+April 14, 2017 - 14:08:27
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+_state:<django.db.models.base.ModelState object at 0x7fc3238af5c0>, update_time:2017-04-13 12:33:00+00:00, title:Hello, subTitle:你好, blog_author_id:1, blog_type:Txt, body:你好，我是在水一方水尾洋, blog_like:123, classification_id:1, blog_ismarkdown:True, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, id:2
+_state:<django.db.models.base.ModelState object at 0x7fc3238af630>, update_time:2017-04-13 12:33:00+00:00, title:first, subTitle:hello how, blog_author_id:1, blog_type:Link, body:test, blog_like:10, classification_id:1, blog_ismarkdown:False, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, id:1
+Performing system checks...
+
+April 14, 2017 - 14:09:18
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa548c50>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa548cc0>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa521080>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa521f60>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5691d0>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5692e8>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5107b8>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa510828>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56f438>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56f550>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa510208>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5109b0>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa521dd8>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5215c0>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa510dd8>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5100f0>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa569b38>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa5694a8>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56f908>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56fa90>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa569160>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:TrueSystem check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[14/Apr/2017 14:09:20] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:09:32] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:09:33] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:09:33] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:10:23] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:12:39] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:12:42] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:12:43] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:12:44] "GET /cdb/blog/ HTTP/1.0" 200 5726
+[14/Apr/2017 14:14:00] "GET /cdb/blog/ HTTP/1.0" 200 7568
+[14/Apr/2017 14:14:01] "GET /cdb/static/blog/html/images/vinyl.png HTTP/1.0" 200 7227
+Internal Server Error: /cdb/blog/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 506, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/django_project/clusterdbm/blog/views.py", line 16, in ShowBlogs
+    return render_to_response('blog_index.html')
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 267, in do_extends
+    nodelist = parser.parse()
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 514, in parse
+    raise self.error(token, e)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 512, in parse
+    compiled_result = compile_func(self, token)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 241, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 508, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 562, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until]),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+[14/Apr/2017 14:15:58] "GET /cdb/blog/ HTTP/1.0" 500 182694
+[14/Apr/2017 14:16:22] "GET /cdb/blog/ HTTP/1.0" 200 7582
+[14/Apr/2017 14:16:23] "GET /cdb/static/blog/html/images/art.jpg HTTP/1.0" 200 97178
+[17/Apr/2017 09:16:13] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[17/Apr/2017 09:16:16] "GET /cdb/static/admin/css/base.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:16] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 09:16:16] "GET /cdb/static/site/css/main.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:16] "GET /cdb/static/admin/css/changelists.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:21] "GET /cdb/static/admin/css/fonts.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:38] "GET /cdb/blog/ HTTP/1.0" 200 7596
+[17/Apr/2017 09:16:42] "GET /cdb/static/bootstrap/css/bootstrap.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:42] "GET /cdb/static/site/css/owl.theme.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:42] "GET /cdb/static/site/css/owl.carousel.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:42] "GET /cdb/static/blog/html/css/styles.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:42] "GET /cdb/static/site/css/mainstyle.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:42] "GET /cdb/static/site/css/jquery-ui.min.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:45] "GET /cdb/static/blog/html/css/animation.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:45] "GET /cdb/static/blog/html/css/lrtk.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:45] "GET /cdb/static/blog/html/css/view.css HTTP/1.0" 304 0
+[17/Apr/2017 09:16:45] "GET /cdb/static/blog/html/css/markdown/perldoc.css HTTP/1.0" 304 0
+[17/Apr/2017 09:17:04] "GET /cdb/static/blog/html/images/music_img/slph.png HTTP/1.0" 200 132675
+[17/Apr/2017 10:53:31] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[17/Apr/2017 10:53:31] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa569358>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56f358>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16aa56f2e8>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+blog_type:Txt, blog_like:123, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16a5652e80>, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, classification_id:1, id:2, subTitle:你好, title:Hello, body:你好，我是在水一方水尾洋, blog_clicknum:12, publish_time:2017-03-27 06:13:43.169897+00:00, blog_author_id:1, blog_ismarkdown:True
+blog_type:Link, blog_like:10, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7f16a5652908>, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, classification_id:1, id:1, subTitle:hello how, title:first, body:test, blog_clicknum:500, publish_time:2017-03-20 06:42:19.574297+00:00, blog_author_id:1, blog_ismarkdown:False
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:01:11
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:01:28
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:02:12
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:02:42
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 11:02:51] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+[17/Apr/2017 11:02:51] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:02:57] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:02:57] "GET /cdb/static/admin/css/dashboard.css HTTP/1.0" 304 0
+[17/Apr/2017 11:03:16] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:03:19] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+[17/Apr/2017 11:03:19] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+Internal Server Error: /cdb/admin/blog/blogs/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 1468, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/views/main.py", line 78, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/views/main.py", line 356, in get_queryset
+    request, qs, self.query)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 900, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1194, in build_filter
+    lookup_class = field.get_lookup(lookups[0])
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/fields/related.py", line 688, in get_lookup
+    raise TypeError('Related Field got invalid lookup: %s' % lookup_name)
+TypeError: Related Field got invalid lookup: icontains
+[17/Apr/2017 11:03:34] "GET /cdb/admin/blog/blogs/?q=Hello HTTP/1.0" 500 164557
+[17/Apr/2017 11:04:12] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+Performing system checks...
+
+April 17, 2017 - 11:02:48
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 11:04:25] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:04:27] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:04:29] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[17/Apr/2017 11:04:29] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+Performing system checks...
+
+April 17, 2017 - 11:04:24
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:05:14
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 17, 2017 - 11:05:51
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 11:07:52] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8336
+[17/Apr/2017 11:07:52] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+Performing system checks...
+
+April 17, 2017 - 11:06:59
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 11:08:29] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+[17/Apr/2017 11:08:29] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+Internal Server Error: /cdb/admin/blog/blogs/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 1468, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/views/main.py", line 78, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/views/main.py", line 356, in get_queryset
+    request, qs, self.query)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/contrib/admin/options.py", line 900, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/query.py", line 790, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/query.py", line 808, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1243, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1263, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1269, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/sql/query.py", line 1194, in build_filter
+    lookup_class = field.get_lookup(lookups[0])
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/db/models/fields/related.py", line 688, in get_lookup
+    raise TypeError('Related Field got invalid lookup: %s' % lookup_name)
+TypeError: Related Field got invalid lookup: icontains
+[17/Apr/2017 11:08:40] "GET /cdb/admin/blog/blogs/?q=Hello HTTP/1.0" 500 164557
+Performing system checks...
+
+April 17, 2017 - 11:08:28
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7f31aaef3f28>
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/autoreload.py", line 226, in wrapper
+    fn(*args, **kwargs)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/management/commands/runserver.py", line 116, in inner_run
+    self.check(display_num_errors=True)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/management/base.py", line 472, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'blog.models.BlogPostAdmin'>: (admin.E126) The value of 'search_fields' must be a list or tuple.
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 2 issues (0 silenced).
+Performing system checks...
+
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 11:09:03] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+[17/Apr/2017 11:09:04] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:09:13] "GET /cdb/admin/blog/blogs/ HTTP/1.0" 200 8742
+[17/Apr/2017 11:09:13] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:09:20] "GET /cdb/admin/blog/blogs/?q=Hello HTTP/1.0" 200 8562
+[17/Apr/2017 11:09:20] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:09:25] "GET /cdb/admin/blog/blogs/? HTTP/1.0" 200 8742
+[17/Apr/2017 11:09:25] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:09:55] "GET /cdb/admin/blog/blogs/?q=%E9%9A%8F%E7%AC%94 HTTP/1.0" 200 6472
+[17/Apr/2017 11:09:55] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:10:02] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:10:05] "GET /cdb/admin/blog/tag/ HTTP/1.0" 200 5963
+[17/Apr/2017 11:10:05] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:10:08] "GET /cdb/admin/blog/tag/3/change/ HTTP/1.0" 200 6753
+[17/Apr/2017 11:10:08] "GET /cdb/static/admin/css/forms.css HTTP/1.0" 304 0
+[17/Apr/2017 11:10:08] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:10:08] "GET /cdb/static/admin/css/widgets.css HTTP/1.0" 304 0
+[17/Apr/2017 11:10:11] "GET /cdb/admin/blog/tag/ HTTP/1.0" 200 5963
+[17/Apr/2017 11:10:11] "GET /cdb/admin/blog/ HTTP/1.0" 200 4587
+[17/Apr/2017 11:10:12] "GET /cdb/admin/blog/blogs/?q=%E9%9A%8F%E7%AC%94 HTTP/1.0" 200 6472
+[17/Apr/2017 11:10:16] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[17/Apr/2017 11:10:24] "GET /cdb/admin/helpdesk/customfield/ HTTP/1.0" 200 4406
+[17/Apr/2017 11:10:24] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:10:26] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[17/Apr/2017 11:10:29] "GET /cdb/admin/helpdesk/emailtemplate/ HTTP/1.0" 200 33915
+[17/Apr/2017 11:10:29] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:10:55] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[17/Apr/2017 11:10:58] "GET /cdb/admin/excel/xf/ HTTP/1.0" 200 4336
+[17/Apr/2017 11:10:58] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:11:04] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[17/Apr/2017 11:11:05] "GET /cdb/admin/excel/sheet/ HTTP/1.0" 200 4354
+[17/Apr/2017 11:11:05] "GET /cdb/admin/jsi18n/ HTTP/1.0" 200 7080
+[17/Apr/2017 11:11:08] "GET /cdb/admin/ HTTP/1.0" 200 30188
+Internal Server Error: /cdb/blog/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 151, in render
+    compiled_parent = self.get_parent(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 148, in get_parent
+    return self.find_template(parent, context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 128, in find_template
+    template_name, skip=history,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/engine.py", line 169, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: _black_timeline.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/django_project/clusterdbm/blog/views.py", line 16, in ShowBlogs
+    return render_to_response('blog_index.html')
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/shortcuts.py", line 39, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 97, in render
+    reraise(exc, self.backend)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 107, in reraise
+    six.reraise(exc.__class__, new, sys.exc_info()[2])
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 151, in render
+    compiled_parent = self.get_parent(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 148, in get_parent
+    return self.find_template(parent, context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 128, in find_template
+    template_name, skip=history,
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/engine.py", line 169, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: _black_timeline.html
+[17/Apr/2017 11:34:13] "GET /cdb/blog/ HTTP/1.0" 500 187664
+[17/Apr/2017 11:34:47] "GET /cdb/blog/ HTTP/1.0" 200 7061
+[17/Apr/2017 11:34:47] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[17/Apr/2017 12:27:50] "GET /cdb/blog/ HTTP/1.0" 200 7052
+[17/Apr/2017 12:28:21] "GET /cdb/blog/ HTTP/1.0" 200 7052
+[17/Apr/2017 12:29:26] "GET /cdb/blog/ HTTP/1.0" 200 7051
+Performing system checks...
+
+April 17, 2017 - 11:09:02
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+blog_ismarkdown:True, blog_like:123, publish_time:2017-03-27 06:13:43.169897+00:00, classification_id:1, subTitle:你好, body:你好，我是在水一方水尾洋, blog_clicknum:12, title:Hello, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, blog_type:Txt, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a4c4ba8>, blog_author_id:1
+blog_ismarkdown:False, blog_like:10, publish_time:2017-03-20 06:42:19.574297+00:00, classification_id:1, subTitle:hello how, body:test, blog_clicknum:500, title:first, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, blog_type:Link, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a4c4a90>, blog_author_id:1
+blog_ismarkdown:True, blog_like:123, publish_time:2017-03-27 06:13:43.169897+00:00, classification_id:1, subTitle:你好, body:你好，我是在水一方水尾洋, blog_clicknum:12, title:Hello, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, blog_type:Txt, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a50cc18>, blog_author_id:1
+blog_ismarkdown:False, blog_like:10, publish_time:2017-03-20 06:42:19.574297+00:00, classification_id:1, subTitle:hello how, body:test, blog_clicknum:500, title:first, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, blog_type:Link, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a50cc88>, blog_author_id:1
+blog_ismarkdown:True, blog_like:123, publish_time:2017-03-27 06:13:43.169897+00:00, classification_id:1, subTitle:你好, body:你好，我是在水一方水尾洋, blog_clicknum:12, title:Hello, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, blog_type:Txt, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a4ff2e8>, blog_author_id:1
+blog_ismarkdown:False, blog_like:10, publish_time:2017-03-20 06:42:19.574297+00:00, classification_id:1, subTitle:hello how, body:test, blog_clicknum:500, title:first, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, blog_type:Link, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a4ff128>, blog_author_id:1
+blog_ismarkdown:True, blog_like:123, publish_time:2017-03-27 06:13:43.169897+00:00, classification_id:1, subTitle:你好, body:你好，我是在水一方水尾洋, blog_clicknum:12, title:Hello, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, blog_type:Txt, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a425dd8>, blog_author_id:1
+blog_ismarkdown:False, blog_like:10, publish_time:2017-03-20 06:42:19.574297+00:00, classification_id:1, subTitle:hello how, body:test, blog_clicknum:500, title:first, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, blog_type:Link, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a4252e8>, blog_author_id:1
+blog_ismarkdown:True, blog_like:123, publish_time:2017-03-27 06:13:43.169897+00:00, classification_id:1, subTitle:你好, body:你好，我是在水一方水尾洋, blog_clicknum:12, title:Hello, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, blog_type:Txt, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a484630>, blog_author_id:1
+blog_ismarkdown:False, blog_like:10, publish_time:2017-03-20 06:42:19.574297+00:00, classification_id:1, subTitle:hello how, body:test, blog_clicknum:500, title:first, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, blog_type:Link, update_time:2017-04-13 12:33:00+00:00, _state:<django.db.models.base.ModelState object at 0x7fba5a484860>, blog_author_id:1
+System check identified some issues:
+
+WARNINGS:
+blog.Blogs.update_time: (fields.W161) Fixed default value provided.
+	HINT: It seems you set a fixed date / time / datetime value as default for this field. This may not be what you want. If you want to have the current date as default, use `django.utils.timezone.now`
+
+System check identified 1 issue (0 silenced).
+[17/Apr/2017 12:30:54] "GET /cdb/blog/ HTTP/1.0" 200 7051
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/css/styles.css HTTP/1.0" 200 10026
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/css/animation.css HTTP/1.0" 200 2018
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/css/lrtk.css HTTP/1.0" 200 866
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/js/js.js HTTP/1.0" 200 305
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/js/jquery.js HTTP/1.0" 200 72174
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/js/silder.js HTTP/1.0" 200 204
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/images/art.jpg HTTP/1.0" 200 97178
+[17/Apr/2017 12:30:54] "GET /cdb/static/blog/html/images/music_img/slph.png HTTP/1.0" 200 132675
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/01.jpg HTTP/1.0" 200 6791
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/s7.jpg HTTP/1.0" 200 11398
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/s8.jpg HTTP/1.0" 200 16319
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/s6.jpg HTTP/1.0" 200 10175
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/quote-bg.png HTTP/1.0" 200 1710
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/icons.png HTTP/1.0" 200 9476
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/vinyl.png HTTP/1.0" 200 7227
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/02.jpg HTTP/1.0" 200 6369
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/04.jpg HTTP/1.0" 200 3109
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/03.jpg HTTP/1.0" 200 3287
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/05.jpg HTTP/1.0" 200 7378
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/06.jpg HTTP/1.0" 200 2318
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/07.jpg HTTP/1.0" 200 6728
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/08.jpg HTTP/1.0" 200 6644
+[17/Apr/2017 12:30:55] "GET /cdb/static/blog/html/images/09.jpg HTTP/1.0" 200 7457
+[17/Apr/2017 12:30:55] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[17/Apr/2017 12:35:07] "GET /cdb/blog/ HTTP/1.0" 200 7145
+[17/Apr/2017 12:35:07] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[17/Apr/2017 12:37:20] "GET /cdb/blog/ HTTP/1.0" 200 5941
+[17/Apr/2017 12:38:20] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[17/Apr/2017 12:41:58] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[17/Apr/2017 12:41:58] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[17/Apr/2017 18:30:51] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/js/js.js HTTP/1.0" 200 305
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/js/silder.js HTTP/1.0" 200 204
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/s8.jpg HTTP/1.0" 200 16319
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/s7.jpg HTTP/1.0" 200 11398
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/02.jpg HTTP/1.0" 200 6369
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/01.jpg HTTP/1.0" 200 6791
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/s6.jpg HTTP/1.0" 200 10175
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/music_img/slph.png HTTP/1.0" 200 132675
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/03.jpg HTTP/1.0" 200 3287
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/icons.png HTTP/1.0" 200 9476
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/vinyl.png HTTP/1.0" 200 7227
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/04.jpg HTTP/1.0" 200 3109
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/05.jpg HTTP/1.0" 200 7378
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/06.jpg HTTP/1.0" 200 2318
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/07.jpg HTTP/1.0" 200 6728
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/08.jpg HTTP/1.0" 200 6644
+[17/Apr/2017 18:30:51] "GET /cdb/static/blog/html/images/09.jpg HTTP/1.0" 200 7457
+[17/Apr/2017 18:30:51] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[17/Apr/2017 18:30:55] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[18/Apr/2017 09:02:18] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[18/Apr/2017 09:02:28] "GET /cdb/static/admin/css/base.css HTTP/1.0" 304 0
+[18/Apr/2017 09:02:28] "GET /cdb/static/site/css/main.css HTTP/1.0" 304 0
+[18/Apr/2017 09:02:28] "GET /cdb/static/admin/css/fonts.css HTTP/1.0" 304 0
+[18/Apr/2017 09:03:15] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[19/Apr/2017 09:11:41] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[19/Apr/2017 09:11:41] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[19/Apr/2017 09:11:41] "GET /cdb/static/admin/css/dashboard.css HTTP/1.0" 200 434
+[19/Apr/2017 09:11:41] "GET /cdb/static/admin/css/base.css HTTP/1.0" 200 15897
+[19/Apr/2017 09:11:41] "GET /cdb/static/site/css/main.css HTTP/1.0" 200 4189
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/css/lrtk.css HTTP/1.0" 200 866
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/css/styles.css HTTP/1.0" 200 10026
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/css/animation.css HTTP/1.0" 200 2018
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/js/jquery.js HTTP/1.0" 200 72174
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/js/js.js HTTP/1.0" 200 305
+[19/Apr/2017 09:11:41] "GET /cdb/static/blog/html/js/silder.js HTTP/1.0" 200 204
+[19/Apr/2017 09:11:41] "GET /cdb/static/admin/css/fonts.css HTTP/1.0" 200 423
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/art.jpg HTTP/1.0" 200 97178
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/s7.jpg HTTP/1.0" 200 11398
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/s6.jpg HTTP/1.0" 200 10175
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/01.jpg HTTP/1.0" 200 6791
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/s8.jpg HTTP/1.0" 200 16319
+[19/Apr/2017 09:11:42] "GET /cdb/static/blog/html/images/music_img/slph.png HTTP/1.0" 200 132675
+[19/Apr/2017 09:11:45] "GET /cdb/static/blog/html/images/quote-bg.png HTTP/1.0" 200 1710
+[19/Apr/2017 09:11:45] "GET /cdb/static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.0" 200 82564
+[19/Apr/2017 09:11:45] "GET /cdb/static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.0" 200 80304
+[19/Apr/2017 09:11:45] "GET /cdb/static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.0" 200 81348
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/icons.png HTTP/1.0" 200 9476
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/vinyl.png HTTP/1.0" 200 7227
+[19/Apr/2017 09:11:46] "GET /cdb/static/admin/img/icon-addlink.svg HTTP/1.0" 200 331
+[19/Apr/2017 09:11:46] "GET /cdb/static/admin/img/icon-changelink.svg HTTP/1.0" 200 380
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/03.jpg HTTP/1.0" 200 3287
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/04.jpg HTTP/1.0" 200 3109
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/02.jpg HTTP/1.0" 200 6369
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/05.jpg HTTP/1.0" 200 7378
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/06.jpg HTTP/1.0" 200 2318
+[19/Apr/2017 09:11:46] "GET /cdb/static/blog/html/images/07.jpg HTTP/1.0" 200 6728
+[19/Apr/2017 09:11:47] "GET /cdb/static/blog/html/images/09.jpg HTTP/1.0" 200 7457
+[19/Apr/2017 09:11:47] "GET /cdb/static/blog/html/images/08.jpg HTTP/1.0" 200 6644
+[20/Apr/2017 09:23:41] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[20/Apr/2017 09:23:42] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[20/Apr/2017 14:49:16] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[20/Apr/2017 14:49:16] "GET /cdb/static/site/css/main.css HTTP/1.0" 304 0
+[20/Apr/2017 14:49:16] "GET /cdb/static/admin/css/base.css HTTP/1.0" 304 0
+[20/Apr/2017 14:49:16] "GET /cdb/static/admin/css/dashboard.css HTTP/1.0" 304 0
+[20/Apr/2017 14:49:17] "GET /cdb/static/admin/css/fonts.css HTTP/1.0" 304 0
+[20/Apr/2017 14:49:31] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[20/Apr/2017 14:49:31] "GET /cdb/static/blog/html/css/lrtk.css HTTP/1.0" 304 0
+Performing system checks...
+
+April 17, 2017 - 12:30:48
+Django version 1.9, using settings 'clusterdbm.local_settings'
+Starting development server at http://127.0.0.1:8888/
+Quit the server with CONTROL-C.
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f864982dc88>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f864982dcf8>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f86497e3748>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f86497e3978>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f86497e2198>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f86497e2240>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f864982dc88>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f864982d128>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f86497e3da0>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f86497e3e48>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f86497e3588>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f86497e3358>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f86497e3828>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f8637f4dda0>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f8637f1e6a0>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f8637f1e208>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f8637f2d710>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f8637f2d6a0>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f8637f1e320>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1
+body:test, blog_imgurl:/cdb/static/site/img/image/droplet_images.png, id:1, _state:<django.db.models.base.ModelState object at 0x7f8637f1e7f0>, publish_time:2017-03-20 06:42:19.574297+00:00, blog_like:10, blog_ismarkdown:False, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:hello how, blog_type:Link, blog_clicknum:500, title:first, blog_author_id:1
+body:你好，我是在水一方水尾洋, blog_imgurl:/cdb/static/site/img/image/head_img_man.jpg, id:2, _state:<django.db.models.base.ModelState object at 0x7f8637f0b2e8>, publish_time:2017-03-27 06:13:43.169897+00:00, blog_like:123, blog_ismarkdown:True, update_time:2017-04-13 12:33:00+00:00, classification_id:1, subTitle:你好, blog_type:Txt, blog_clicknum:12, title:Hello, blog_author_id:1[20/Apr/2017 14:49:31] "GET /cdb/static/blog/html/css/styles.css HTTP/1.0" 304 0
+[20/Apr/2017 14:49:31] "GET /cdb/static/blog/html/css/animation.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:52] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[24/Apr/2017 09:24:52] "GET /cdb/static/blog/html/css/styles.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:52] "GET /cdb/static/blog/html/css/lrtk.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:52] "GET /cdb/static/blog/html/css/animation.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:53] "GET /cdb/admin/ HTTP/1.0" 200 30188
+[24/Apr/2017 09:24:53] "GET /cdb/static/site/css/main.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:53] "GET /cdb/static/admin/css/base.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:53] "GET /cdb/static/admin/css/dashboard.css HTTP/1.0" 304 0
+[24/Apr/2017 09:24:54] "GET /cdb/static/admin/css/fonts.css HTTP/1.0" 304 0
+[24/Apr/2017 09:42:01] "GET /cdb/admin/ HTTP/1.0" 200 30188
+Internal Server Error: /cdb/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'clusterdbm.show_blogs' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/django_project/clusterdbm/clusterdbm/views.py", line 29, in home
+    return render(request,"new_home.html",{'group':group,'product_list':query_product})
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/six.py", line 686, in reraise
+    raise value
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'show_blogs' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[24/Apr/2017 09:42:04] "GET /cdb/ HTTP/1.0" 500 182806
+[24/Apr/2017 09:42:25] "GET /cdb/blog/ HTTP/1.0" 200 7096
+[24/Apr/2017 09:42:25] "GET /cdb/static/site/imgs/logo.ico HTTP/1.0" 200 509006
+[25/Apr/2017 09:20:18] "GET /cdb/blog/ HTTP/1.0" 200 7096
+Internal Server Error: /cdb/
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 507, in render
+    current_app=current_app)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'clusterdbm.show_blogs' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/data/django_project/clusterdbm/clusterdbm/views.py", line 29, in home
+    return render(request,"new_home.html",{'group':group,'product_list':query_product})
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/backends/django.py", line 95, in render
+    return self.template.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 206, in render
+    return self._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 988, in render
+    bit = node.render_annotated(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/base.py", line 955, in render_annotated
+    return self.render(context)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/utils/six.py", line 686, in reraise
+    raise value
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/template/defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/root/.pyenv/versions/3.4.3/lib/python3.4/site-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+django.core.urlresolvers.NoReverseMatch: Reverse for 'show_blogs' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []

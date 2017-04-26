@@ -1,0 +1,105 @@
+{% extends "blogbase_black_timeline.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div id="mainbody">
+  <div class="blank"></div>
+  <div class="blogs">
+    <ul class="bloglist">
+      {% for content in blog_body %}
+      <li>
+        <div class="arrow_box">
+          <div class="ti"></div>
+          <!--三角形-->
+          <div class="ci"></div>
+          <!--圆形-->
+          <h2 class="title"><a href="{% url 'article' content.id%}">{{ content.blog_title }}</a></h2>
+          <ul class="textinfo">
+            <a href="{{ settings.SITE_BASE_URL }}/"><img src="{{ content.blog_imgurl }}"></a>
+            <p> {{ content.blog_body }}</p>
+          </ul>
+          <ul class="details">
+            <li class="likes"><a href="#">10</a></li>
+            <li class="comments"><a href="#">34</a></li>
+            <li class="icon-time"><a href="#">{{ content.blog_timestamp }}</a></li>
+          </ul>
+        </div>
+        <!--arrow_box end--> 
+      </li>
+      {% endfor %}
+    </ul>
+    <!--bloglist end-->
+    <aside>
+      <div class="tuijian">
+        <h2>推荐文章</h2>
+        <ol>
+{#          <li><span><strong>1</strong></span><a href="{ { settings.SITE_BASE_URL }}/">有一种思念，是淡淡的幸福,一个心情一行文字</a></li>#}
+{#          <li><span><strong>2</strong></span><a href="{ { settings.SITE_BASE_URL }}/">励志人生-要做一个潇洒的女人</a></li>#}
+{#          <li><span><strong>3</strong></span><a href="{ { settings.SITE_BASE_URL }}/">女孩都有浪漫的小情怀――浪漫的求婚词</a></li>#}
+{#          <li><span><strong>4</strong></span><a href="{ { settings.SITE_BASE_URL }}/">Green绿色小清新的夏天-个人博客模板</a></li>#}
+{#          <li><span><strong>5</strong></span><a href="{ { settings.SITE_BASE_URL }}/">女生清新个人博客网站模板</a></li>#}
+{#          <li><span><strong>6</strong></span><a href="{ { settings.SITE_BASE_URL }}/">Wedding-婚礼主题、情人节网站模板</a></li>#}
+{#          <li><span><strong>7</strong></span><a href="{ { settings.SITE_BASE_URL }}/">Column 三栏布局 个人网站模板</a></li>#}
+{#          <li><span><strong>8</strong></span><a href="{ { settings.SITE_BASE_URL }}/">时间煮雨-个人网站模板</a></li>#}
+{#          <li><span><strong>9</strong></span><a href="{ { settings.SITE_BASE_URL }}/">花气袭人是酒香―个人网站模板</a></li>#}
+            {% for title in blog_body %}
+            <li><span><strong>{{ forloop.counter }}</strong></span><a href="{% url 'article' title.id%}">{{ title.blog_title }}</a></li>
+            {% endfor %}
+
+        </ol>
+      </div>
+{#      <div class="toppic">#}
+{#        <h2>图文并茂</h2>#}
+{#        <ul>#}
+{#          <li><a href="{ { settings.SITE_BASE_URL }}/"><img src="/static/images/k01.jpg">腐女不可怕，就怕腐女会画画！#}
+{#            <p>伤不起</p>#}
+{#            </a></li>#}
+{#          <li><a href="{ { settings.SITE_BASE_URL }}/"><img src="/static/images/k02.jpg">问前任，你还爱我吗？无限戳中泪点~#}
+{#            <p>感兴趣</p>#}
+{#            </a></li>#}
+{#          <li><a href="{ { settings.SITE_BASE_URL }}/"><img src="/static/images/k03.jpg">世上所谓幸福，就是一个笨蛋遇到一个傻瓜。#}
+{#            <p>喜欢</p>#}
+{#            </a></li>#}
+{#        </ul>#}
+{#      </div>#}
+      <div class="clicks">
+        <h2>热门点击</h2>
+        <ol>
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">慢生活</a></span><a href="{{ settings.SITE_BASE_URL }}/">有一种思念，是淡淡的幸福,一个心情一行文字</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">爱情美文</a></span><a href="{{ settings.SITE_BASE_URL }}/">励志人生-要做一个潇洒的女人</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">慢生活</a></span><a href="{{ settings.SITE_BASE_URL }}/">女孩都有浪漫的小情怀――浪漫的求婚词</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">博客模板</a></span><a href="{{ settings.SITE_BASE_URL }}/">Green绿色小清新的夏天-个人博客模板</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">女生个人博客</a></span><a href="{{ settings.SITE_BASE_URL }}/">女生清新个人博客网站模板</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">Wedding</a></span><a href="{{ settings.SITE_BASE_URL }}/">Wedding-婚礼主题、情人节网站模板</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">三栏布局</a></span><a href="{{ settings.SITE_BASE_URL }}/">Column 三栏布局 个人网站模板</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">个人网站模板</a></span><a href="{{ settings.SITE_BASE_URL }}/">时间煮雨-个人网站模板</a></li>#}
+{#          <li><span><a href="{ { settings.SITE_BASE_URL }}/">古典风格</a></span><a href="{{ settings.SITE_BASE_URL }}/">花气袭人是酒香―个人网站模板</a></li>#}
+            {% for foo in hot_rank %}
+                <li><span><a href="{% url 'article' foo.id %}">{{ foo.blog_type }}</a></span><a href="{% url 'article' foo.id %}">{{ foo.blog_title }}</a></li>
+            {% endfor %}
+
+        </ol>
+      </div>
+      <div class="search">
+        <form class="searchform" method="get" action="#">
+          <input type="text" name="s" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+        </form>
+      </div>
+      <div class="viny">
+        <dl>
+          <dt class="art"><img src="{% static 'blog/html/images/music_img/slph.png' %}" alt="专辑"></dt>
+          <dd class="icon-song"><span></span>生来彷徨</dd>
+          <dd class="icon-artist"><span></span>歌手：汪峰</dd>
+          <dd class="icon-album"><span></span>所属专辑：《生来彷徨》</dd>
+          <dd class="icon-like"><span></span><a href="{ { settings.SITE_BASE_URL }}/">喜欢</a></dd>
+          <dd class="music">
+            <audio src="/static/images/slph.mp3" controls></audio>
+          </dd>
+          <!--也可以添加loop属性 音频加载到末尾时，会重新播放-->
+        </dl>
+      </div>
+    </aside>
+  </div>
+  <!--blogs end--> 
+</div>
+{% endblock content %}

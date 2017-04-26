@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load comments %}
+{% load rank %}
+{% load range %}
+
+{% block title %}{{ block.super }}Postgresql{% endblock %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/detail_2017.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+    <hr/>
+    <hr/>
+
+
+	<div class="container detail-body">
+				<div class="row">
+					<div class="col-lg-9">
+						<!--top-->
+						<div class="detail-top">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="des-box">
+										<div class="des-top">
+											<div class="des-logo">
+												<img alt="SITE-redis" src="{% static 'site/img/redis.png' %}" />
+											</div>
+											<div class="des-title">
+												<h2>Redis</h2>
+												<h5>NoSQL Opensource</h5>
+												<span class="starsBar">
+													{% for _ in review.rating|range:0 %}
+													<img title="gorgeous" alt="{{i}}" src="{% static 'site/img/products/review/star-on.png'%}">&nbsp;
+													{% endfor %}
+														<!--{-% endwith %-}-->
+														
+													{% for _ in review.rating|range:5 %}
+													<img title="gorgeous" alt="{{i}}" src="{% static 'site/img/products/review/star-off.png' %}">&nbsp;
+													{% endfor %}
+												</span>
+												<h5>12K pepole using</h5>
+											</div>
+										</div>
+										<div class="des-txt">
+											<p>Redis is the abbreviation of Remote Dictionary Server. The original developer of Redis is Salvatore Sanfilippo who was hired by VMware in March, 2010. Redis is a key-value data stored system which is based on memory. Redis is also an open source software and it usually is considered data structure server. Redis support lots of stored value types, including string, list, set, zset (sorted set) and hash. Besides, it provides Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang and other programming languages. Moreover, compared to other NoSQL databases, it is easier to set up the performance level for Redis.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="fa10-box">
+										<ul>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+											<li>
+												<i class="fa fa-cube"></i><span>Feature</span>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--more-detail-->
+						<div class="more-detail">
+							<p>Redis is the abbreviation of Remote Dictionary Server. The original developer of Redis is Salvatore Sanfilippo who was hired by VMware in March, 2010.  Redis is a key-value data stored system which is based on memory. Redis is also an open source software and it usually is considered data structure server. Redis support lots of stored value types, including string, list, set, zset (sorted set) and hash. Besides, it provides Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang and other programming languages. Moreover, compared to other NoSQL databases, it is easier to set up the performance level for Redis.Redis is the abbreviation of Remote Dictionary Server. The original developer of Redis is Salvatore Sanfilippo who was hired by VMware in March, 2010.  Redis is a key-value data stored system which is based on memory. Redis is also an open source software and it usually is considered data structure server. Redis support lots of stored value types, including string, list, set, zset (sorted set) and hash. Besides, it provides Java，C/C++，C#，PHP，JavaScript，Perl，Object-C，Python，Ruby，Erlang and other programming languages. Moreover, compared to other NoSQL databases, it is easier to set up the performance level for Redis.</p>
+						</div>
+
+						<!--data-model-->
+						<div class="detail-data">
+
+								<div class="system-body">
+									<ul>
+										<li>
+											<p><input type="checkbox" name="windows" value="windows" />Windwos Platform</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="Linux" value="Linux" />Linux Platform</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="BSD" value="BSD" />BSD Platform</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="Mac OS" value="Mac OS" />Mac OS Platform</p>
+										</li>
+										<li>
+											<a href="$">Other Platform</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="lang-body">
+									<ul>
+										<li>
+											<p><input type="checkbox" name="JAVA" value="JAVA" />JAVA</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="Python" value="Python" />Python</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="C#" value="C#" />C#</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="PHP" value="PHP" />PHP</p>
+										</li>
+										<li>
+											<a href="$">Other PLanguages</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="database-body">
+									<ul>
+										<li>
+											<p><input type="checkbox" name="MySQL" value="MySQL" />MySQL</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="SQL" value="SQL" />SQL Server</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="Oracle" value="Oracle" />Oracle</p>
+										</li>
+										<li>
+											<p><input type="checkbox" name="MogoDB" value="MogoDB" />MogoDB</p>
+										</li>
+										<li>
+											<a href="$">Other Database</a>
+										</li>
+									</ul>
+								</div>
+
+						</div>
+
+						<!--reviews-->
+						<div class="reviews-content">
+							<div class="reviews-body">
+								<h2>Revews(8)</h2>
+								<div class="re-sone">
+									<p>6/3/2017 By Name</p>
+									<input type="text"/>
+								</div>
+								<div class="re-sone">
+									<p>9/3/2017 By Name</p>
+									<input type="text"/>
+								</div>
+								<div class="re-sone">
+									<p>9/3/2017 By Name</p>
+									<input type="text"/>
+								</div>
+								<div class="re-sone">
+									<p>9/3/2017 By Name</p>
+									<input type="text"/>
+								</div>
+								<div class="re-btnbox">
+									<div class="rem-btn">
+										Read More
+									</div>
+									<a class="addmre" href="@">Add My review</a>
+								</div>
+							</div>
+
+							<div class="re-history">
+								<div class="rehis-body">
+									<h2>Released history</h2>
+									<ul>
+										<li>
+											<a href="*">12/23/2015 Relased 2.1</a>
+										</li>
+										<li>
+											<a href="*">12/23/2015 Relased 2.1</a>
+										</li>
+										<li>
+											<a href="*">12/24/2015 Relased 2.2</a>
+										</li>
+										<li>
+											<a href="*">12/26/2015 Relased 2.1</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div><!--col-lg-9-end-->
+
+					<div class="col-lg-3">
+
+							<a  class="gt6m-btn" href="#">Get Free 6 Montrhs Trial</a>
+
+							<ul class="dis7-body">
+								<li>
+									<h3>Provider Information</h3>
+									<div class="pi-box">
+										<a href="#">VendorName</a>
+										<p>Latest Version and date</p>
+										<p>License Type</p>
+									</div>
+								</li>
+
+								<li>
+									<h3>Provider Information</h3>
+									<div class="pi-box">
+										<a href="#">VendorName</a>
+										<p>Latest Version and date</p>
+										<p>License Type</p>
+									</div>
+								</li>
+
+								<li>
+									<h3>Provider Information</h3>
+									<div class="pi-box">
+										<a href="#">VendorName</a>
+										<p>Latest Version and date</p>
+										<p>License Type</p>
+									</div>
+								</li>
+
+								<li>
+									<div class="pi2-box">
+										<a href="#">VendorName</a>
+										<a href="#">VendorName</a>
+										<a href="#">VendorName</a>
+										<a href="#">VendorName</a>
+									</div>
+								</li>
+
+								<li>
+									<div class="pi2-box">
+										<h4>Document</h4>
+									</div>
+								</li>
+
+								<li>
+									<div class="pi2-box">
+										<h4>Video</h4>
+
+										<dd class="dd-content videoBar">
+											<a href="#">
+												<div class="play-video">
+													<i class="fa fa-play play-video-fa"></i>
+												</div>
+												<img />
+											</a>
+										</dd>
+									</div>
+								</li>
+
+								<li>
+									<div class="pi2-box">
+										<h4>ScreenShot</h4>
+										<dd class="dd-content screenShot ">
+												<img src="{% static 'site/img/star-on.png' %}" data-action="zoom" />
+												<img src="{% static 'site/img/star-on.png' %}" data-action="zoom" />
+												<img src="{% static 'site/img/star-on.png' %}" data-action="zoom" />
+												<img src="{% static 'site/img/star-on.png' %}" data-action="zoom" />
+										</dd>
+									</div>
+								</li>
+
+							</ul>
+
+							<a  class="gt6m-btn enda-btn" href="#">Get Free 6 Montrhs Trial</a>
+
+					</div>
+				</div>
+			</div>
+{% endblock %}
+
+
+
+
+{% block footer %}
+      <!-- Some social button for contact will do -->
+    {{ block.super }}<!--base style-->
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'site/js/jquery.js' %}"></script>
+<script src="{% static 'site/js/zooming.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock scripts %}

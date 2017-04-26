@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load rank %}
+
+{% block title %}{{ block.super }}Applictions{% endblock %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="Applications" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<!-- title -->
+<div class="container appContainer">
+    {{ block.super }}
+	<div class="row">
+		<!--Applications Title-->
+		<div class="col-md-12">
+			<div class="page-title">
+				<h1>Applictions</h1>
+				<h3>SITE is an app library for server software. Install your favorite applications in your own servers or run them in the cloud. Select one app to get started or learn more about what makes SITE special.</h3>
+                <span><p style="color:red" id="error"></p></span>
+				<div class="input-group">
+					<input id="tags" class="form-control">
+					<span class="input-group-btn">
+						<button id="product_search" class="btn btn-default" type="button">GO</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<!--Applications ShowBar-->
+		<div class="col-md-12">
+			<div class="row">
+					<!--Left Selections-->
+					<div class="col-md-2 col-sm-4 hidden-xs left_menu">
+						<ul class="nav nav-pills nav-stacked">
+							<li class="active">
+								<a href="#">All</a>
+							</li>
+							<li><a href="#">SQL</a></li>
+							<li><a href="#">NoSQL</a></li>
+							<li><a href="#">CMS</a></li>
+							<li><a href="#">Forum</a></li>
+						</ul>
+					</div>
+					<!--Right Products-->
+					<div class="col-lg-10">
+						<div class="row">
+                            {% if product_list %}
+                                {% for product in product_list %}
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="product-frame">
+                                            <div class="product-top">
+                                                <div class="product-title">
+                                                    <a href="{{ product.product_url }}">{{ product.name }}</a>
+                                                    <span>{{ product.type }}</span>
+                                                </div>
+                                                <div class="product-icon">
+                                                    <a href="{{ product.product_url }}"><span><img src="{{ settings.SITE_BASE_URL }}/static/site/img/stack-iconbar{{ product.name|lower }}-icon.png" alt="{{ product.name }}"/></span></a>
+                                                </div>
+                                            </div>
+                                            <div class="product-mid">
+                                                <p>{{ product.summary|safe }}</p>
+                                            </div>
+                                            <div class="product-statsWrapper">
+                                                <div class="row">
+                                                    <div class="col-sm-4 col-xs-5">
+                                                        <div class="product-graphic">{{ product.name|ranking }}</div>
+                                                        <div class="product-stat-title">Rank</div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-5">
+                                                        <div class="product-graphic">
+                                                            {{ product.name|client }}
+                                                        </div>
+                                                        <div class="product-stat-title">Client</div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-5">
+                                                        <div class="product-graphic">
+                                                            {{ product.first_release_date|l_year }}
+                                                            <span>yrs</span>
+                                                        </div>
+                                                        <div class="product-stat-title">Age</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-bottom">
+                                                <div class="row">
+							<div class="bottomBar product-btn">
+								<div class="col-xs-12">
+									<a href="{{ settings.SITE_BASE_URL }}/product{{ product.name }}/detail/"><span style="float: left;">More Details</span></a>
+									<a href="{% url 'order:makeorder' %}?p={{ product.name }}"><span style="float: right;">Order Now</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+                                        </div>
+                                    </div><!--product1-->
+                                {% endfor %}
+                            {% else %}
+                                <h1 class="text-danger text-center">The product you query,does not exist yet! </h1>
+                            {% endif %}
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'site/js/jquery-ui.js' %}"></script>
+<script>
+	$(function() {
+		var availableTags = [
+			"MySQL","Gitlab","Hadoop","Django","Cassandra","Redis","PostgreSQL","mongoDB"
+		];
+		$( "#tags" ).autocomplete({
+			source: availableTags
+		});
+	});
+	$("#tags")
+			.focus(function(){$(this).val('')})
+			.blur(function(){
+				var $this = $(this);
+
+			($this.val() === '')? $this.val('search...') : null;
+	});
+
+    $("#product_search").click(function() {
+        if ($("#tags").val() == "" || $("#tags").val() == "search..." ) {
+            $('#error').text("enter some thing to forward");
+            return false;
+        }
+        var query_product=$("#tags").val();
+        $.ajax(
+        {
+            type:"post",
+            url:"{% url 'applications:product_list' %}",
+            data:{"query_product":query_product,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',},
+            datatype:"text",
+            async:false,
+            success:function(result)
+            {
+
+{#                  $('#application-list').html(result.result)#}
+                if(result.result=="-1")
+                {
+                    $('#error').text("Sorry the app does not exists,you search another app, or you can waitting a while It's will coming soon!");
+                    $("#tags").val("");
+                    $("#tags").focus();
+                   //return false
+                }
+                else
+                {
+                    $('#error').text("");
+                    $("#tags").val("");
+                    $("#tags").focus();
+                    var product_title = result.result;
+                    $("a[title != "+ product_title + "]").hide();
+                };
+            },
+        });
+    })
+</script>
+{% endblock scripts %}

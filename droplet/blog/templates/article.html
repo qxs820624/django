@@ -1,0 +1,36 @@
+{% extends "blogbase.html" %}
+{% block content %}
+	<li>
+		<div class="arrow_box">
+			<div class="ti"></div>
+			<!--三角形-->
+			<div class="ci"></div>
+			<!--圆形-->
+			<h2 class="title">{{ blog.title }}</h2>
+			<ul class="textinfo">
+			<a href="{{ settings.SITE_BASE_URL }}/"><img src="{{ blog.blog_imgurl }}"></a>
+			<p> {{ blog.body }}</p>
+			</ul>
+			<ul class="details">
+			<li class="likes"><a href="#">10</a></li>
+			<li class="comments"><a href="#">34</a></li>
+			<li class="icon-time"><a href="#">{{ blog.timestamp }}</a></li>
+			</ul>
+		</div>
+	<!--arrow_box end--> 
+	</li>
+	<div class="card">
+		<h1>About Me</h1>
+		<p>网名：{{ userinfo.nickname }}</p>
+		<p>职业：{{ userinfo.work }}</p>
+		<p>公司：{{ userinfo.company }}</p>
+		<p>Email：{{ userinfo.email }}</p>
+	<ul class="linkmore">
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="talk" title="给我留言"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="address" title="联系地址"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="email" title="给我写信"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="photos" title="生活照片"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="heart" title="关注我"></a></li>
+	</ul>
+	</div>
+{% endblock %}

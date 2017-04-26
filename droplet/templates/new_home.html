@@ -1,0 +1,180 @@
+{% extends "new_base.html" %}
+{% load staticfiles %}
+
+{% block main-content %}
+    <!--banner-->
+    <div id="owl-demo" class="owl-carousel">
+				<a class="item"><img src="{% static 'site/imgs/banner-img/banne1-blue.jpg'%}" alt="1"><div class="test"></div></a>
+				<a class="item"><img src="{% static 'site/imgs/banner-img/banne2.jpg'%}" alt="2"></a>
+				<a class="item"><img src="{% static 'site/imgs/banner-img/banne3.jpg'%}" alt="3"></a>
+				<a class="item"><img src="{% static 'site/imgs/banner-img/banne4.jpg'%}" alt="4"></a>
+			</div>
+
+    <!--Mian Container-->
+	<main>
+		<!--Features Products-->
+		<section class="features products">
+			<div class="products-title">
+				<h2>Featured Products</h2>
+				<span><a href="#">more</a></span>
+			</div>
+			<ul class="SITE-FproductsBar">
+			{% if product_list %}
+				{% for product in product_list %}
+					<li>
+					<div class="product-top">
+							<a href="{{ product.product_url }}"><h3>{{ product.name }}</h3></a>
+							<span>{{ product.type }}</span>
+					</div>
+					<div class="products-img">
+						<img src="{% static 'site/img/stack-iconbar/' %}{{product.name|lower}}-icon.png" />
+					</div>
+					<div class="products-detail">
+						<!--我们还可以通过{ %autoescape off%}的方式关闭整段代码的自动转义，比如下面这样：-->
+						<!--{ % autoescape off %}-->
+							<!--Hello { { name }}-->
+						<!--{ % endautoescape %}-->
+						{{ product.summary|safe }}
+					</div>
+					<div class="price-and-star">
+						<span class="starsBar">
+								<img alt="1" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="2" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="3" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="4" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="5" src="{% static 'site/imgs/star-on.png'%}" />
+							</span>
+						<span class="price">{{product.paid_plan_price}}</span>
+					</div>
+					<div class="buttons">
+						<a href="{{ settings.SITE_BASE_URL }}/product{{ product.name }}/detail/"><button>More Detail</button></a>
+						<a href="{{ settings.SITE_BASE_URL }}/product{{ product.name }}/order/"><button>Order Now</button></a>
+					</div>
+					</li>
+				{% endfor %}
+			{% endif %}
+			</ul>
+		</section>
+		<!--Popular Products-->
+		<section class="popular products">
+			<div class="products-title">
+				<h2>Popular Products</h2>
+				<span><a href="#">more</a></span>
+			</div>
+			<ul class="SITE-PproductsBar">
+				<!--Product 1-->
+				<li>
+					<div class="product-top">
+							<a href="#"><h3>Redis</h3></a>
+							<span>NoSQL</span>
+					</div>
+					<div class="products-img">
+						<img src="{% static 'site/imgs/postgresql.png'%}" />
+					</div>
+					<div class="products-detail">
+						<p>
+							Redis is the abbreviation of Remote Dictionary Server. The original developer of Redis is Salvatore Sanfilippo who was hired by VMware in March.
+						</p>
+					</div>
+					<div class="price-and-star">
+						<span class="starsBar">
+								<img alt="1" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="2" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="3" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="4" src="{% static 'site/imgs/star-on.png'%}" />
+								<img alt="5" src="{% static 'site/imgs/star-on.png'%}" />
+							</span>
+						<span class="price">Free Trial</span>
+					</div>
+					<div class="buttons">
+						<a href="#"><button>More Detail</button></a>
+						<a href="#"><button>Order Now</button></a>
+					</div>
+				</li><!--end-->
+			</ul>
+		</section>
+	</main>
+
+    <!--Why we use SITE-->
+	<section class="why">
+				<h3>Why Choose Our Windows VPS and Linux VPS Hosting Services?</h3>
+				<div class="why-ans">
+					<ul>
+						<li>
+							<a href="#">Windows VPS and Linux VPS Hosting Specialist</a>
+						</li>
+						<li>
+							<a href="#">24x7x365 Live Chat and Email Support</a>
+						</li>
+						<li>
+							<a href="#">SSAE 16 SOC-1 Type II Compliant Data Centers</a>
+						</li>
+						<li>
+							<a href="#">Free Shared DNS / Email Hosting</a>
+						</li>
+						<li>
+							<a href="#">SmarterBundle ($800 Value) at No Additional Cost</a>
+						</li>
+						<li>
+							<a href="#">Free VHD File Backup</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Multi-Homed Ultra Fast Network In Dallas, Texas USA</a>
+						</li>
+						<li>
+							<a href="#">Free KVM Over IP and Remote Reboot</a>
+						</li>
+						<li>
+							<a href="#">Free WebsitePanel Control Panel and Free Install</a>
+						</li>
+						<li>
+							<a href="#">Cisco Hardware Firewall Available</a>
+						</li>
+						<li>
+							<a href="#">High Performance SSD Drives</a>
+						</li>
+						<li>
+							<a href="#">99.99% Up Time Guarantee</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+    <!--PartnerLogo-->
+	<section class="partner-logo">
+		<ul>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/ceph.png'%}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/hadoop-logo.png'%}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/Logo_Cisco_40.gif'%}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/Logo_Intel_40.gif'%}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/Logo_Supermicro_40.gif'%}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'site/imgs/openstack-logo.png'%}">
+				</a>
+			</li>
+		</ul>
+	</section>
+{% endblock %}

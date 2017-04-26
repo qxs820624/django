@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+<!--{% load crispy_forms_tags %}-->
+<!-- {-% load threadedcomments_tags %} -->
+{% load comments %}
+
+{% block title %}{{ block.super }}Redis{% endblock %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/DetailPage.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+    <hr/>
+    <hr/>
+    <div class="container">
+    		<div class="navbar navbar-default Redis-navbar" role="navigation">
+    			<div class="navbar-inner container-fluid">
+    				<ul class="nav navbar-nav">
+    					<li class="active"><a href="#">Overview</a></li>
+    					<li><a href="#">Overview</a></li>
+    					<li class="dropdown">
+    						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Over<span class="caret"></span></a>
+    						<ul class="dropdown-menu" role="menu">
+						{% for name in productsNames %}
+    							<li><a href="{% url 'applications:product_detail' name %}">{{ name }} </a></li>
+						{% endfor %}
+    						</ul>
+    					</li>
+    					<li><a href="#">Overview</a></li>
+    					<li><a href="#">Overview</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    </div>
+	{% for k, v in reviews.items %}
+	{% if k == "Redis" %}
+	{% for review in v %}
+	{% if forloop.first %}
+		<div class="container" id="newcomment">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="Page-text">
+						{% render_comment_form for review %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	<div id="DetailPage1{{ forloop.counter }}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="products-show">
+						<img src="{% static 'site/img/products/Cloud.png' %}" alt=""/>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="Page-text">
+						<p>
+						<a class="btn btn-primary btn-xs pull-right" href="#new_comment">Write a Review &rarr;</a>
+						</p>
+						<p>
+						<h5>by {{ review.created_by }} on {{ review.created_date }}
+						<span title="gorgeous" class="rating-stars" data-score={{ review.rating }}>
+							<!--{-% with ''|center:review.rating as range %-}-->
+							<!--{-% for _ in range %-}-->
+						{% load range %}
+						{% for _ in review.rating|range %}
+						<img title="gorgeous" alt="{{i}}" src="{% static 'site/img/products/review/star-on.png'%}">&nbsp;
+						{% endfor %}
+							<!--{-% endwith %-}-->
+							
+						{% for _ in review.rating|range:5 %}
+						<img title="gorgeous" alt="{{i}}" src="{% static 'site/img/products/review/star-off.png' %}">&nbsp;
+						{% endfor %}
+						</p>
+						<p>
+						<input name="comment[rating]" type="hidden" readonly="" value={{review.rating}}>
+						</span>
+						</h5>
+						</p>
+						<h5>{{	review.reviews	}}</h5>
+						<p>
+						Was this review helpful to you?
+						<a class="btn btn-default btn-xs vote-up" href="#">Yes</a>
+						<a class="btn btn-default btn-xs vote-down" href="#">No</a>
+						</p>
+						<div class="products-button">
+							<span><a href="#">Cloud Applications</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'site/js/jquery.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock scripts %}

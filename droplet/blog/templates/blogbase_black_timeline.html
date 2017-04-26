@@ -1,0 +1,129 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="GBK">
+	<title>在水一方-博客</title>
+	<meta name="keywords" content="edroplet,droplet,blog,咨询,黑色模板,个人网站模板,个人博客模板,博客模板,css3,html5,网站模板">
+	<meta name="description" content="this is an suggestion workstation for company">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="shortcut icon" href="{% static 'site/imgs/logo.ico' %}" />
+	{% block styles %}
+	<link href="{% static 'blog/html/css/styles.css' %}" rel="stylesheet" media="screen" type="text/css">
+	<link href="{% static 'blog/html/css/animation.css' %}" rel="stylesheet" media="screen" type="text/css">
+	<!-- 返回顶部调用 begin -->
+	<link href="{% static 'blog/html/css/lrtk.css' %}" rel="stylesheet" media="screen" type="text/css"/>
+	<script type="text/javascript" src="{% static 'blog/html/js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'blog/html/js/js.js' %}"></script>
+	<!-- 返回顶部调用 end-->
+	{% endblock %}
+	<!--[if lt IE 9]>
+	<script src="/cdb/static/blog/html/js/modernizr.js"></script>
+	<![endif]-->
+	</head>
+
+	<body>
+		<header>
+			<h1>droplet blog</h1>
+			<h3>在水一方</h3>
+			<nav id="nav">
+			<ul>
+			<li><a href="{{ settings.SITE_BASE_URL }}/"  target="_blank" title="在水之岸">在水一方</a></li>
+			<li><a href="{{ settings.SITE_BASE_URL }}/blog/" target="_blank" title="随笔" >随笔</a></li>
+			<li><a href="{{ settings.SITE_BASE_URL }}/cdyd/" target="_blank"  title="在线表格" >移动</a></li>
+			<li><a href="{{ settings.SITE_BASE_URL }}/mytalk" target="_blank"  title="龙门阵" >龙门阵</a></li>
+			<li><a href="{{ settings.SITE_BASE_URL }}/admin/" target="_blank"  title="管理" >管理</a></li>
+			<li><a href="{{ settings.SITE_BASE_URL }}/about/" target="_blank" title="关于" >关于</a></li>
+			</ul>
+			<script src="{% static 'blog/html/js/silder.js' %}"></script><!--获取当前页导航 高亮显示标题-->
+			</nav><!--nav end-->
+		</header>
+		<!--header end-->
+		<div id="mainbody">
+			<div class="info">
+			<figure> <img src="{% static 'blog/html/images/art.jpg' %}" alt="Panama Hat">
+			<figcaption><strong>渡人如渡己，渡已，亦是渡</strong> 当我们被误解时，会花很多时间去辩白。 但没有用，没人愿意听，大家习惯按自己的所闻、理解做出判别，每个人其实都很固执。与其努力且痛苦的试图扭转别人的评判，不如默默承受，给大家多一点时间和空间去了解。而我们省下辩解的功夫，去实现自身更久远的人生价值。其实，渡人如渡己，渡已，亦是渡人。</figcaption>
+			</figure>
+			<div class="card">
+				<h1>About Me</h1>
+				<p>网名：{{ userinfo.nickname }}</p>
+				<p>职业：{{ userinfo.work }}</p>
+				<p>公司：{{ userinfo.company }}</p>
+				<p>Email：{{ userinfo.email }}</p>
+			<ul class="linkmore">
+				<li><a href="{{ settings.SITE_BASE_URL }}/grzx/add_article" class="talk" title="给我留言"></a></li>
+				<li><a href="{{ settings.SITE_BASE_URL }}/" class="address" title="联系地址"></a></li>
+				<li><a href="{{ settings.SITE_BASE_URL }}/" class="email" title="给我写信"></a></li>
+				<li><a href="{{ settings.SITE_BASE_URL }}/" class="photos" title="生活照片"></a></li>
+				<li><a href="{{ settings.SITE_BASE_URL }}/" class="heart" title="关注我"></a></li>
+			</ul>
+			</div>
+			</div>
+			<!--info end-->
+			{% block content %}
+			{% endblock content %}
+		</div><!--mainbody end-->
+		<footer>
+			<div class="footer-mid">
+			<div class="links">
+			<h2>友情链接</h2>
+			<ul>
+				<li><a href="http://blog.csdn.net/wyb199026" target="_blank">我的CSDN</a></li>
+				<li><a href="http://www.jianshu.com/users/82eee120776d/latest_articles" target="_blank">我的简书</a></li>
+				<li><a href="https://testerhome.com" target="_blank">TesterHome</a></li>
+			</ul>
+			</div>
+			<div class="visitors">
+			<h2>最新评论</h2>
+			<dl>
+				<dt><img src="{% static 'blog/html/images/s8.jpg' %}">
+				<dt>
+				<dd>DanceSmile
+				<time>reuset.user</time>
+				</dd>
+				<dd>在 <a href="http://www.yangqq.com/jstt/bj/2013-07-28/530.html" class="title">如果要学习web前端开发，需要学习什么？ </a>中评论：</dd>
+				<dd>文章非常详细，我很喜欢.前端的工程师很少，我记得几年前yahoo花高薪招聘前端也招不到</dd>
+			</dl>
+			<dl>
+				<dt><img src="{% static 'blog/html/images/s7.jpg' %}">
+				<dt>
+				<dd>yisa
+				<time>2小时前</time>
+				</dd>
+				<dd>在 <a href="http://www.yangqq.com/news/s/2013-07-31/533.html" class="title">芭蕾女孩的心事儿</a>中评论：</dd>
+				<dd>我手机里面也有这样一个号码存在</dd>
+			</dl>
+			<dl>
+				<dt><img src="{% static 'blog/html/images/s6.jpg' %}">
+				<dt>
+				<dd>小林博客
+				<time>8月7日</time>
+				</dd>
+				<dd>在 <a href="http://www.yangqq.com/jstt/bj/2013-06-18/285.html" class="title">如果个人博客网站再没有价值，你还会坚持吗？ </a>中评论：</dd>
+				<dd>博客色彩丰富，很是好看</dd>
+			</dl>
+			</div>
+			<section class="flickr">
+			<h2>摄影作品</h2>
+			<ul>
+				<li><a href="/"><img src="{% static 'blog/html/images/01.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/02.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/03.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/04.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/05.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/06.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/07.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/08.jpg' %}"></a></li>
+				<li><a href="/"><img src="{% static 'blog/html/images/09.jpg' %}"></a></li>
+			</ul>
+			</section>
+			</div>
+			<div class="footer-bottom">
+			<p>Copyright 2013 Design by <a href="http://www.yangqq.com">Sven_Weng</a></p>
+			</div>
+		</footer>
+		<!-- jQuery仿腾讯回顶部和建议 代码开始 -->
+		<div id="tbox"> <a id="togbook" href="/e/tool/gbook/?bid=1"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+		<!-- 代码结束 -->
+	</body>
+</html>

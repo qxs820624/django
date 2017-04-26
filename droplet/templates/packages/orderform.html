@@ -1,0 +1,29 @@
+{% extends "packages/package_base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+
+{% block title %}your service{% endblock %}
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+
+
+{% block panel_right %}
+    <div class="row">
+  <div class="col-md-8 col-md-push-1">
+    <div class="page-header">
+        <h1>Order</h1>
+    </div>
+    <div class="well text-center">
+         {% crispy order_form %}
+     </div> <!--well-->
+  </div><!--col-md-6-->
+</div> <!--row-->
+
+{% endblock %}
+

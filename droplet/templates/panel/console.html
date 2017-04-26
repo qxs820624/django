@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load rank %}
+
+{% block title %}{{ block.super }}My Console{% endblock %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+
+{% block container %}
+
+<!-- title -->
+<div class="container appContainer">
+    {{ block.super }}
+    {% if group.name == 'Paid' %}
+        {% include "panel/_clientconsole.html" %}
+    {% elif group.name == 'Staff' %}
+        {% include "panel/_staffconsole.html" %}
+    {% endif %}
+</div>
+{% endblock container %}
+

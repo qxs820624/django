@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	<!--link rel="shortcut icon" href="ico/chinamobile_64X64.ico" type="image/x-icon" /-->
+	{% block title %}{{ block.super }}常德移动加班时间统计{% endblock %}
+	{% block scripts %}
+	{{ block.super }}
+	<script src="{{settings.STATIC_URL}}excel/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="{{settings.STATIC_URL}}excel/overtime.js"></script>
+	{% endblock scripts %}
+	{% block styles %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{{settings.STATIC_URL}}excel/overtime.css">
+	<style type="text/css">
+	</style>
+	{% endblock styles %}
+	
+	{% block navbar-left %}
+	{% include "_navbar.html" %}
+	{% endblock %}
+	{% block navbar-right %}
+	
+	{% if not user.is_authenticated %}
+	<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+	<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+	{% else %}
+	{{ block.super }}
+	{% endif %}
+	{% endblock %}
+	{% block main-content %}
+	{% block container %}
+	{{ block.super }}
+	<div class="container appContainer" id="box">
+		<div class="row" id="tab_content"><div class="page-title">
+			<h1 class = "text-center">欢迎 {{ user.name }}</h1>
+			</div> <!--title -->
+			{% if sheets %}
+			{% for sheet in sheets %}
+			<div  class="col-md-4 col-sm-6" id="{{sheet.sheetName }}" style="display:{{ sheet.display }}">
+			<!--div id="{-% sheet.sheetName %}" style="display:none|inline"-->
+			<div class=="table-head">
+				<table  style="overflow:hidden;border:1px solid #000000;">
+					<colgroup></colgroup>
+					<thead  id="thead{{ sheet.sheetName }}">
+						{% for thead in sheet.thead %}
+						<tr>
+							<td class={{ sheet.sheetName }}remark width=600 colspan=18>{{ sheet.thead.remark }}</td>
+						</tr>
+						<tr>
+							{% for firstline in sheet.thead.firstline %}
+							<th class="{{ firstline.class }} firstline" colspan={{ firstline.colspan }} rowspan={{ firstline.rowspan }}>{{ firstline.description }}</th>
+							<!--th class='record firstline' colspan=6>加班节假日名称</th>
+							<th class='record firstline' colspan=3>中秋节</th>
+							<th class='record firstline' colspan=7>国庆节</th>
+							<th class=yellow rowspan=2>标黄天数之和</th>
+							<th class=red rowspan=2>标红天数之和</th-->
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for secondline in sheet.thead.secondline %}
+							<th class="{{ secondline.class }}" scope={{ secondline.class }}>{{ secondline.description}}</th>
+							<!--th class='record normal w1' scope=col>序号</th>
+							<th class='record normal w2' scope=col>部门</th>
+							<th class='record normal' scope=col>员工编号</th>
+							<th class='record normal' scope=col>姓名</th>
+							<th class='record normal' scope=col>曾用员工编号</th>
+							<th class='record normal' scope=col>员工分类</th>
+							<th class=red scope=col>2016-9-15（中秋）</th>
+							<th class=yellow scope=col>2016-9-16（调休）</th>
+							<th class=yellow scope=col>2016-9-17（调休）</th>
+							<th class=red scope=col>2016-10-1（国庆节）</th>
+							<th class=red scope=col>2016-10-2（国庆节）</th>
+							<th class=red scope=col>2016-10-3（国庆节）</th>
+							<th class=yellow scope=col>2016-10-4（调休）</th>
+							<th class=yellow scope=col>2016-10-5（调休）</th>
+							<th class=yellow scope=col>2016-10-6（调休）</th>
+							<th class=yellow scope=col>2016-10-7（调休）</th-->
+							{% endfor %}
+						</tr>
+						{% endfor %}
+					</thead>
+				</table>
+			</div>
+			<div id="{{ sheet.sheetName }}tbody" class="table-body">
+				<table  style="border:1px solid #000000;"  id="table{{ sheet.sheetName }}">
+					<colgroup>
+						<col style="width: 50px;" /><col />
+					</colgroup>
+					<tbody id="tbodylisted">
+						<tr>
+							<!--<th class='record w1' scope=col>1</th>-->
+							<!--<th class='record w2' scope=col>市场部</th>-->
+							<!--<th class=record scope=col>36003679</th>-->
+							<!--<th class=record scope=col>冯颖</th>-->
+							<!--<th class=record scope=col>36003679</th>-->
+							<!--<th class=record scope=col>职能部室员工</th>-->
+							<!--<td class=color_red scope=col>1</td>-->
+							<!--<td class=color_yellow scope=col>1</td>-->
+							<!--<td class=color_yellow scope=col>1</td>-->
+							<!--<td class=color_red scope=col>0</td>-->
+							<!--<td class=color_red scope=col>1</td>-->
+							<!--<td class=color_red scope=col>1</td>-->
+							<!--<td class=color_yellow scope=col>1</td>-->
+							<!--<td class=color_yellow scope=col>0</td>-->
+							<!--<td class=color_yellow scope=col>0</td>-->
+							<!--<td class=color_yellow scope=col>0</td>-->
+							<!--<td class='span1' scope=col>3</td>-->
+							<!--<td class='span1' scope=col>3</td>-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+			{% endfor %}
+			<ul id="tab_nav">
+				{% for sheet in sheets %}
+					<li  class="{{ sheet.sheetName }} {{ sheet.selected }}" action-data="#{{ sheet.sheetName }}">{{ sheet.description }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</div>
+		<div class="uploadform">
+			{% if user.userid%}
+			<form enctype="multipart/form-data" method="post"  name="uploadfile" action="{% url 'excel:getExcel' user.userid %}">{% csrf_token %}
+			{% else %}
+			<form enctype="multipart/form-data" method="post"  name="uploadfile" action="{% url 'excel:getExcel' "32670000" %}">{% csrf_token %}
+			{% endif %}
+				<div style="font-size:15px;"><label size=50px>上传文件：</label><input class="fileinputbt" type="file" name="upfile" /></div>
+				<div style="font-size:15px;"><label size=50px>请输入密码(上传)：</label><input type="password" name="password" value=""></div>
+				<div style="">
+					<input type="submit" style="margin-right:50px;font-size:15px;color:orange;width:100px;height:30px" name="upload" value="替换加班时间"/>
+					<input type="button" name="exporttolocal" style="margin-right:50px;font-size:15px;color:orange;width:100px;height:30px" value="保存到本地" size="150"  onClick="submittolocal()" />
+				</div>
+			</form>
+			<p class="info" style="font-size:12px;color:blue;height:24px" ></p>
+		</div>
+	</div>
+{% endblock container %}
+{% endblock main-content %}
+

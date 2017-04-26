@@ -1,0 +1,14 @@
+.SITE-table{
+    margin-top:120px;
+}
+
+.SITE-trColor > th{
+    background: #0c83e7;!important;
+    color: #ffffff;
+    padding: 0;
+}
+
+
+h3{
+    color: #1f68c7;
+}

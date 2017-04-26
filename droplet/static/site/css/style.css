@@ -1,0 +1,254 @@
+.to-top{
+	  display:none;
+  	z-index: 1!important;
+ 	  text-decoration:none;
+  	position:fixed;
+  	bottom:10px;
+  	right:8px;
+  	overflow:hidden;
+  	width:51px;
+  	height:51px;
+  	border:none;
+  	text-indent:100%;
+    background: url("/static/site/img/ui.totop.png") no-repeat 0px 0px;
+}
+
+/*.navbar-default .navbar-nav > li >a:hover{
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li:hover{
+  background: blue;
+}*/
+
+.navbar{
+  border: 0px;
+}
+
+.owl-carousel{
+  margin-top: 50px;
+}
+
+/*//////////container mycontainer////////////*/
+.mycontainer{
+  margin-top: 10px;
+}
+
+.mycontainer h2{
+  color:#1f68c7;
+  font-size: 20px !important;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+.mycontainer p{
+  font-size: 16px;
+}
+
+.mycontainer img {
+  margin-right: 10px;
+}
+
+.SITEpricing-borderStyle:hover{
+  box-shadow: 2px 2px 20px #888888;
+}
+
+.SITEpricing-borderStyle{
+  padding:0;
+  margin-right: 2px;
+}
+
+h3{
+    color:#0c83e7;
+}
+
+
+
+/*/////////////////////SITE-show////////////////////*/
+.SITE-showContainer{
+    height: 492px;
+    background-color: #959595;
+    border: 1px solid #c7c7c7;
+    margin-bottom: 20px;
+}
+
+.img-resize{
+    height: 270px;
+    width: 100%;
+}
+
+.SITE-showContent p{
+    padding:20px;
+}
+
+.SITE-showSec1,.SITE-showSec2,.SITE-showSec3{
+    border-bottom: 2px solid #dcdcdc;
+}
+
+.SITE-showSec1 h2,.SITE-showSec2 h2,.SITE-showSec3 h2{
+    margin-left:16px;
+    color:#1f68c7;
+}
+
+.SITE-showContent{
+    color:#ffffff;
+}
+
+.SITE-showContent p{
+    font-size:20px;
+}
+
+/*//////////////////homePage-applicationsShow重构第二版//////////////////*/
+
+.BDM-homeProduct-frame{
+    background:#dde4eb;
+    border:1px solid #D3DEE9;
+    box-shadow: 1px 1px 3px 0px rgba(51, 51, 51, 0.12);
+    border-radius: 4px;
+    padding:5px 10px 0 10px;
+    margin-bottom:8px;
+}
+
+.BDM-homeProduct-icon{
+    position: absolute;
+    top: -2px;
+    right: -15px;
+}
+
+.BDM-homeProduct-icon img{
+    width:42px;
+    height:100%;
+}
+
+.BDM-homeProduct-top{
+    width: 100%;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+
+/*//////////////////homePage-applicationsShow重构第二版---基础css//////////////////*/
+.product-frame{
+    background:#fff;
+    border:1px solid #D3DEE9;
+    border-top:11px solid #248EC7;
+    box-shadow: 1px 1px 3px 0px rgba(51, 51, 51, 0.12);
+    border-radius: 4px;
+    padding:10px;
+    margin-bottom:8px;
+}
+
+.product-top{
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.product-icon{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
+.product-icon img{
+    width:42px;
+    height:100%;
+}
+
+.product-title{
+    color: #248EC7;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.product-title a{
+    text-decoration: none;
+    font-size:0.9em;
+}
+
+.product-title span{
+    display: block;
+    font-size: 12px;
+    text-align: inherit;
+    color: #000;
+    font-weight: 400;
+}
+
+.product-mid p{
+    font-size: 14px;
+}
+
+.product-graphic{
+    border-radius: 100%;
+    border: 3px solid #FFED57;
+    height: 50px;
+    width: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #363636;
+}
+
+.product-graphic span{
+    font-size: 0.6em;
+}
+
+.product-stat-title {
+    font-size: 0.75em;
+    text-align: center;
+}
+
+.product-mid{
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.product-statsWrapper{
+    border-bottom: 1px solid #D4DCE5;
+    padding: 30px 20px 20px;
+    display: table;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.product-bottom{
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.product-bottom .row{
+    margin-left:-4px;
+    margin-right:-4px;
+}
+
+.product-btn{
+    background: #248EC7;
+    border-radius: 4px;
+    display: block;
+    color: white;
+    font-size: 0.9em;
+    padding: 8px;
+    margin-bottom: 4px;
+
+}
+
+.bottomBar{
+    overflow:hidden;
+}
+
+.bottomBar a{
+    color:#fff;
+}
+
+.bottomBar span{
+    display:inline-block;
+}
+
+.product-btn:hover{
+    text-decoration: none !important;
+    background:#29abe2;
+    color:#fff;
+}
+

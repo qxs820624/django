@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Redis{% endblock %}
+
+{% block styles %}
+  {{ block.super }}
+  <link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+  <link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/css/Network.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="Network" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div id="sec1" class="text-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>High End, Fully Redundant, Enterprise Class Data Center</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pageContent">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="compare">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Datacenter.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Data Center</h3>
+                            <ul>
+                                <li><a href="http://www.sqlservermart.com/">Shared Windows Hosting</a></li>
+                                <li><a href="http://www.hyper-v-mart.com/">Windows Hyper-V Hosting</a></li>
+                                <li><a href="http://www.dedicatedsqlserver.com/">Dedicated Windows Server</a></li>
+                                <li><a href="#">Server Management Service</a></li>
+                                <li><a href="#">Domain Name Registration</a></li>
+                                <li><a href="#">SSL Certificates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Facility.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Facility</h3>
+                            <ul>
+                                <li>SSAE 16 SOC-1 Type II compliant data centers</li>
+                                <li>Full cabinet and half cabinet solutions</li>
+                                <li>24/7/365 physical access</li>
+                                <li>Pre-approved control access list with ID check in man-trap</li>
+                                <li>Covered dock with three bays</li>
+                                <li>Staging area and secure customer storage available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Power.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Power</h3>
+                            <ul>
+                                <li>Redundant A, B, C and D power backup available via four 750 KVA UPS systems</li>
+                                <li>Three 1.5 MW Cummins generators with load bank for testing</li>
+                                <li>Lightning Protection System</li>
+                                <li>14,400 volt main electrical service</li>
+                                <li>Pre-action dry pipe fire detection and suppression</li>
+                                <li>SSL Certificates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Cooling.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Cooling</h3>
+                            <ul>
+                                <li>Four 500-ton Trane chillers</li>
+                                <li>Liebert air handling units</li>
+                                <li>Ice storage system with 46 ice storage tanks</li>
+                                <li>Dual water mains with diverse entries</li>
+                                <li>DAbundant chilled water capacity at 2(N) redundancy</li>
+                                <li>SSL Certificates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Network.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Network / Bandwidth</h3>
+                            <ul>
+                                <li>Access to a high-performance mesh of redundant, Tier-1 Internet backbone carriers through one managed connection</li>
+                                <li>High-performance network-based solutions customized per your requirements</li>
+                                <li>Cross-connects to all major carriers, including direct connections to Equinix</li>
+                                <li>Multiple fiber entrance facilities</li>
+                                <li>Multiple fiber optic service providers; dual/diverse feeds</li>
+                                <li>Network consulting and management available from industry veterans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+                    <div class="thumbnail" style="height:500px">
+                        <a href="#">
+                            <img src="{% static 'site/img/NetworkImg/Dallas_Support.gif' %}"/>
+                        </a>
+                        <div class="caption">
+                            <h3>Security and Support</h3>
+                            <ul>
+                                <li>Secure entrance with check-in station and man-trap</li>
+                                <li>24 hour staffing of Network Operations Center</li>
+                                <li>Free remote hands and eyes</li>
+                                <li>Free bandwidth reporting</li>
+                                <li>100% power SLA available</li>
+                                <li>Perimeter fence with gate access control</li>
+                                <li>Interior and exterior video surveillance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock container %}
+
+
+<script src="{% static 'site/js/jquery-ui.js' %}"></script>
+
+{% block scripts %}
+{% endblock scripts %}

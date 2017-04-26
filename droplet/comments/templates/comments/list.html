@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!-- {-% load comments %} -->
+{% load threadedcomments_tags %}
+
+<link rel="stylesheet" href="{% static 'comments/css/comments.css' %}">
+<!-- 在 jquery.js 之后引入 -->
+<script src="{% static 'site/js/jquery.js' %}"></script>
+<script src="{% static 'comments/js/comments.js' %}"></script>
+{% if user.is_authenticated %}
+<script>
+jQuery(function($) {
+	setAuthenticatedUser();
+});
+</script>
+{% endif %}
+
+<div class="comments_length">
+<p>{{ comment_list|length }} Comments</p>
+</div>
+
+<div class="comments">
+{% for comment in comment_list|fill_tree|annotate_tree %}
+{% if comment.parent_id and not comment.open %}
+	<!-- return to outer(non-root) level  -->
+	</div>
+	</div>
+	<!-- end return to outer(non-root) level  -->
+{% endif %}
+<div class="media">
+	<a class="pull-left" href="#">
+	<img class="media-object" src="http://placehold.it/64x64" alt="">
+	</a>
+	<div class="media-body" id="c{{ comment.id }}">{# c## is used by the absolute URL of the Comment model, so keep that as it is. #}
+	<h4 class="media-heading">{{ comment.user_name }}
+		<small>
+		{{ comment.submit_date }}
+		| <a href="#c{{ comment.id }}" data-comment-id="{{ comment.id }}" class="comment_reply_link">Reply</a>
+		</small>
+	</h4>
+		{{ comment.comment|linebreaks }}
+	{% for close in comment.close %}
+	<!-- start close  -->
+	{# 从深层返回上层嵌套评论结束 #}
+		</div></div>
+	<!-- end close  -->
+	{% endfor %}
+
+{% endfor %}
+</div>

@@ -1,0 +1,150 @@
+{% load staticfiles %}
+
+<div class="row">
+        <div class="page-title">
+				<h1 class = "text-center">Welcome {{ user.name }}</h1>
+        </div> <!--title -->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">Orders</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if orders %}
+                                <ul class="">
+                                    {% for order,number in orders.items %}
+                                        <li role="presentation"><a>{{ order }} Order<span> ({{ number }})</span></a></li>
+                                    {% endfor %}
+{#                                    <li role="presentation"><a>Suspended Order<span>(3)</span></a></li>#}
+{#                                    <li role="presentation"><a>Canceled Order<span>(5)</span></a></li>#}
+                                </ul>
+                            {% else %}
+                                <ul class="">
+                                <li role="presentation"><a>Active Order<span>(0)</span></a></li>
+                                <li role="presentation"><a>Suspended Order<span>(0)</span></a></li>
+                                <li role="presentation"><a>Canceled Order<span>(0)</span></a></li>
+                            </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">Clients</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if servers %}
+                                <ul class="">
+                                    {% for user,val in servers.items %}
+                                        <li><a>{{ user }} Clients<span> ({{ val }})</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <ul class="">
+                                    {% for user in servers %}
+                                        <li><a>{{ user }} Clients<span>(0)</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">Invoices</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            <ul class="">
+                                <li role="presentation"><a>Over Due Invoices<span>(2)</span></a></li>
+                                <li role="presentation"><a>Unpaid Invoices<span>(3)</span></a></li>
+                                <li role="presentation"><a>Paid Invoices<span>(5)</span></a></li>
+                            </ul>
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">Tickets</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if tickets %}
+                                <ul class="">
+                                {% for queue,val in tickets.items %}
+                                    <li><a>{{ queue }} Tickets<span>({{ val }})</span></a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">Reviews</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if reviews %}
+                                <ul class="">
+                                    {% for s,v in reviews.items %}
+                                        <li><a>{{ s }} Review<span> ({{ v }})</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <ul class="">
+                                    {% for s in reviews.items %}
+                                        <li><a>{{ s }} Review<span> (0)</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+</div>

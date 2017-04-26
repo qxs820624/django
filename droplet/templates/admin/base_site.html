@@ -1,0 +1,37 @@
+{% extends "admin/base.html" %}
+{% load i18n %}{% load admin_static bootstrapped_goodies_tags %}
+
+{% block title %}{% include "_brandname.html" %} Admin{% endblock %}
+
+{% block branding %}
+  <a class="navbar-brand" href="{% url 'admin:index' %}">{% include "_brandname.html" %} Admin</a>
+    <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+        selector: "textarea",
+        theme: "modern",
+        plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons template paste textcolor"
+        ],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "print preview media | forecolor backcolor emoticons",
+        image_advtab: true,
+        visualblocks_default_state: true,
+        width: 1000,
+        height: 400,
+        content_css: "/static/blog/css/tinymce.css"
+        });
+    </script>
+{% endblock %}
+
+{% block nav-global %}
+  <a class="btn btn-default" href="{% url 'home' %}"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Switch to Site</a>
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+  <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+{% endblock %}
+

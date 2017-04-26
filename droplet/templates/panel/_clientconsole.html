@@ -1,0 +1,139 @@
+{% load staticfiles %}
+
+<div class="row">
+        <div class="page-title">
+				<h1 class = "text-center">Welcome {{ user.name }}</h1>
+        </div> <!--title -->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">My Orders</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if orders %}
+                                <ul class="">
+                                    {% for order,number in orders.items %}
+                                        <li role="presentation"><a>{{ order }} Order<span> ({{ number }})</span></a></li>
+                                    {% endfor %}
+{#                                    <li role="presentation"><a>Suspended Order<span>(3)</span></a></li>#}
+{#                                    <li role="presentation"><a>Canceled Order<span>(5)</span></a></li>#}
+                                </ul>
+                            {% else %}
+                                <ul class="">
+                                <li role="presentation"><a>Active Order<span>(0)</span></a></li>
+                                <li role="presentation"><a>Suspended Order<span>(0)</span></a></li>
+                                <li role="presentation"><a>Canceled Order<span>(0)</span></a></li>
+                            </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">My Servers</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            {% if servers %}
+                                <ul class="">
+                                    <li><a>Active Server<span>({{ servers.Active }})</span></a></li>
+                                    <li><a>Suspended Server<span>({{ servers.Pending }})</span></a></li>
+                                    <li><a>Canceled Server<span>({{ servers.Inactive }})</span></a></li>
+                                </ul>
+                            {% else %}
+                                <ul class="">
+                                <li><a>Active Server<span>(0)</span></a></li>
+                                <li><a>Suspended Server<span>(0)</span></a></li>
+                                <li><a>Canceled Server<span>(0)</span></a></li>
+                            </ul>
+                            {% endif %}
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">My Invoices</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            <ul class="">
+                                <li role="presentation"><a>Active Invoices<span>(2)</span></a></li>
+                                <li role="presentation"><a>Suspended Invoices<span>(3)</span></a></li>
+                                <li role="presentation"><a>Canceled Invoices<span>(5)</span></a></li>
+                            </ul>
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">My Tickets</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            <ul class="">
+                                <li><a href="{% url 'helpdesk_dashboard' %}">Open a new Ticket<span></span></a></li>
+                                <li role="presentation"><a>Opening Ticket<span>({{ tickets.opening }})</span></a></li>
+                                <li role="presentation"><a>Closed Ticket<span>({{ tickets.closed }})</span></a></li>
+                            </ul>
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-frame">
+                <div class="product-top">
+                    <div class="product-title">
+                        <h1 class="text-primary">My Reviews</h1>
+                    </div>
+                </div> <!--top-->
+                <div class="product-mid">
+                    <div class = "row">
+                        <div class="col-md-6">
+                            <img src="{% static 'panel/order.png' %}" />
+                        </div>
+                        <div class = "col-md-6 ">
+                            <ul class="">
+                                <li><a>My Reviews<span> ({{ reviews }})</span></a></li>
+                                <li><a>Write a Review</a></li>
+                            </ul>
+                        </div><!--right-->
+                    </div>
+                </div> <!--mid-->
+            </div><!--frame-->
+        </div><!--col-md-4-->
+</div>

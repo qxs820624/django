@@ -1,0 +1,18 @@
+{% load staticfiles %}
+{% block blog_body_header %}
+<header>
+	<h1>droplet blog</h1>
+	<h3>在水一方</h3>
+	<nav id="nav">
+	<ul>
+	<li><a href="{{ settings.SITE_BASE_URL }}/" >网站首页</a></li>
+	<li><a href="{{ settings.SITE_BASE_URL }}/Python">Python</a></li>
+	<li><a href="{{ settings.SITE_BASE_URL }}/abouttest">测试相关</a></li>
+	<li><a href="{{ settings.SITE_BASE_URL }}/mytalk">个人扯淡</a></li>
+	<li><a href="{{ settings.SITE_BASE_URL }}/diary">偶尔能想起来的日记</a></li>
+	</ul>
+	<script src="{% static 'blog/html/js/silder.js' %}"></script><!--获取当前页导航 高亮显示标题-->
+	</nav>
+</header>
+{% endblock %}
+

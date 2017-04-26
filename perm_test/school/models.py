@@ -48,15 +48,31 @@ class Permission(models.Model):
         )
 
 
+class TagManager(models.Manager):
+    def get_or_create(self, **kwargs):
+        defaults = kwargs.pop('defaults', {})
+        articalslist = defaults.pop('articalslist', {})
+        Tag.articalslistlist = articalslist
+        kwargs.update(defaults)
+        super(TagManager, self).get_or_create(**kwargs)
+
 class Tag(models.Model):
     name = models.CharField(u"标签名", max_length=30)
-    
+    articals = models.ManyToManyField(Entry)
+    articalslist = []
     def __str__(self):
         return self.name
     
     def __unicode__(self):
         return u'%s' % self.name
     
+    def save(self, *args, **kwargs):
+        super(Tag, self).save()
+        for i in self.articalslist:
+            p, created = Entry.objects.get_or_create(name=i)
+            self.articals.add(p) 
+        self.articalslist = []
+
     class Meta:
         verbose_name = '标签'
         verbose_name_plural = verbose_name

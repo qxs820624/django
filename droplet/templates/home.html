@@ -1,0 +1,465 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/price_section.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/key_feature.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/owl.carousel.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/owl.theme.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/style.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="Home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block splash %}
+	<div id="owl-demo" class="owl-carousel">
+			<a class="item"><img src="{% static 'site/img/Slide_01.gif' %}" alt=""></a>
+			<a class="item"><img src="{% static 'site/img/Slide_02.gif' %}" alt=""></a>
+			<a class="item"><img src="{% static 'site/img/Slide_03.gif' %}" alt=""></a>
+			<a class="item"><img src="{% static 'site/img/Slide_04.gif' %}" alt=""></a>
+			<a class="item"><img src="{% static 'site/img/Slide_05.gif' %}" alt=""></a>
+			
+	</div>
+{% endblock splash %}
+
+{% block container %}
+<!-- Benefits of the Django application -->
+<a name="about"></a>
+
+<div class="container mycontainer">
+  <!--homePage-applications row 8 -->
+	<div class="row">
+        {% if product_list %}
+            {% for product in product_list %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="BDM-homeProduct-frame">
+				<div class="BDM-homeProduct-top">
+					<div class="product-title"><a href="#">{{ product.name }}</a></div>
+					<div class="BDM-homeProduct-icon">
+						<a href="{{ product.product_url }}"><span><img src='/static/site/img/stack-iconbar{{ product.name|lower }}-icon.png' alt="{{ product.name }}"/></span></a>
+					</div>
+				</div>
+				<div class="product-mid">
+					<p>{{ product.summary|safe }} </p>
+				</div>
+				<div class="product-bottom">
+					<div class="row">
+                        <div class="bottomBar product-btn">
+							<div class="col-xs-12">
+								<a href="{{ settings.SITE_BASE_URL }}/product{{ product.name }}/detail/"><span style="float: left;">More Detail</span></a>
+								<a href="{% url 'order:makeorder' %}?p={{ product.name }}"><span style="float: right;">Order Now</span></a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+        {% else %}
+            <h1>Something go wrong!!</h1>
+        {% endif %}
+		<!--Redis-->
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">Redis</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="https://redis.io/"><span><img src="{% static 'site/img/stack-iconbar/redis-icon.png' %}" alt="Redis"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>Redis is the abbreviation of Remote Dictionary Server. The original developer of Redis is Salvatore Sanfilippo who was hired by VMware in March, 2010.  Redis is a key-value data stored system which is based on memory. Redis is also an open source software and it usually is considered data structure server. </p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#						</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--MySQL-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">MySQL</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="http://www.mysql.com/">#}
+{#						<span><img src="{% static 'site/img/stack-iconbar/mysql-icon.png' %}" alt="MySQL"/></span>#}
+{#						</a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>MySQL is a relational database management system, relation database data stored in different tables, rather than put all the data in a large warehouse, thus increasing the speed and increase flexibility. </p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--PostgreSQL-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">PostgreSQL</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="https://www.postgresql.org/"><span><img src="{% static 'site/img/stack-iconbar/postgresql-icon.png' %}" alt="PostgreSQL"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>PostgreSQL support most of the SQL standard and offers many other modern features: complex queries, foreign keys, triggers, views, transaction integrity, MVCC. </p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--Cassandra-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">Cassandra</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="http://cassandra.apache.org/"><span><img src="{% static 'site/img/stack-iconbar/cassandra-icon.png' %}" alt="Cassandra"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance.</p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--Hadoop-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">Hadoop</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="http://hadoop.apache.org/"><span><img src="{% static 'site/img/stack-iconbar/hadoop-icon.png' %}" alt="Hadoop"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>HDFS has the characteristic of high fault-tolerance and designed to deploy on cheap hardware; And it provides high throughput to access the application's data, suitable for those with very large dataset applications.</p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--MongoDB-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">MongoDB</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="https://www.mongodb.com/"><span><img src="{% static 'site/img/stack-iconbar/mongodb-icon.png' %}" alt="mongoDB"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>MongoDB is a between relational databases and the relational database products, is the most abundant function of relational database, the most like a relational database. He supports data structure is very loose, it is similar to the json bson format, so you can store more complex data types. </p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--ElasticSearch-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">ElasticSearch</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="https://www.elastic.co/products/elasticsearch"><span><img src="{% static 'site/img/stack-iconbar/elasticsearch-icon.png' %}" alt="elasticsearch"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>ElasticSearch is a search server based on Lucene. It provides a distributed full-text search engine users ability, more RESTful web based interface.</p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<!--Memcached-->#}
+{#		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">#}
+{#			<div class="BDM-homeProduct-frame">#}
+{#				<div class="BDM-homeProduct-top">#}
+{#					<div class="product-title">#}
+{#						<a href="#">Memcached</a>#}
+{#						<span>NoSQL</span>#}
+{#					</div>#}
+{#					<div class="BDM-homeProduct-icon">#}
+{#						<a href="http://memcached.org/"><span><img src="{% static 'site/img/stack-iconbar/memcached-icon.png' %}" alt="memcached"/></span></a>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="product-mid">#}
+{#					<p>Memcached is a high-performance, distributed memory object caching system for dynamic Web applications by alleviating database load. It in memory cache data and objects to help reduce the number of reading the database, so as to improve the speed of the dynamic, database driven website.</p>#}
+{#				</div>#}
+{#				<div class="product-bottom">#}
+{#					<div class="row">#}
+{#						<div class="bottomBar product-btn">#}
+{#							<div class="col-xs-12">#}
+{#								<a href="#"><span style="float: left;">More Detail</span></a> | #}
+{#								<a href="#"><span style="float: right;">Order Now</span></a>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+	</div>
+</div>
+
+    <!-- section of show-->
+<section id="show-features">
+
+	<div class="container">
+			<div class="section-title">
+				<h1>We are developing the project</h1>
+			</div><!-- /section-title -->
+				<div class="row SITE-showSec1">
+					<h2>Openstack</h2>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/openstack.png' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p>It is an open source cloud computing project management platform, composed of several main components together complete the specific work.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/openstack-2.png' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p> It supports almost all types of cloud, the project goal is to provide implementation is simple and can be large-scale extension, rich, standard unified management of cloud computing platform. It through a variety of complementary services provide the infrastructure as a service (IaaS) solution, each service provides the API for integration.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row SITE-showSec2">
+					<h2>Hadoop</h2>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/hadoop.png' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p>The user can in under the condition of distributed low-level details, did not understand the development of distributed application. Make full use of the power of the cluster of high-speed computing and storage.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/hadoop-2.png' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p>HDFS has the characteristic of high fault-tolerance and designed to deploy on cheap hardware; And it provides high throughput to access the application's data, suitable for those with very large dataset applications. HDFS eased the POSIX requirements, can be in the form of a flow to access data in a file system.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row SITE-showSec3">
+					<h2>Artificial Intelligence</h2>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/ai.png' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p>Artificial intelligence is a branch of computer science, it attempts to understand the essence of intelligence, and can produce a new kind of response in the form of human intelligence similar intelligent machines, research in this field include robot, speech recognition, image recognition, natural language processing and expert system, etc.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="SITE-showContainer">
+							<div class="SITE-showImg">
+								<img src="{% static 'site/img/kf/ai-2.jpg' %}" class="img-resize"/>
+							</div>
+							<div class="SITE-showContent">
+								<p>Artificial intelligence is a challenging science, engaged in the work of man must understand the computer knowledge, psychology and philosophy. Artificial intelligence is the science of including is very extensive, it is composed of different fields, such as machine learning, computer vision, etc.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div><!-- /container -->
+</section>
+
+	<!-- section of clients -->
+<section id="clients" href='#'>
+
+		<div class="container">
+
+				<div class="row text-center">
+
+					<div id="slider-partners" class="owl-carousel owl-theme" style="display: block; opacity: 1;">
+
+					<div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 6240px; left: 0px; display: block; transition: all 800ms ease; transform: translate3d(-390px, 0px, 0px);"><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/Logo_Microsoft_40.gif' %}" alt="partner-1" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="img/partners/partner-2.png" alt="partner-1" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/Logo_Cisco_40.gif' %}" alt="partner-1" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/Logo_Intel_40.gif' %}" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/openstack-logo.png' %}" alt="openstack" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/ceph.png' %}" alt="ceph" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/Logo_Supermicro_40.gif' %}" alt="partner-1" width="170" height="60">
+						</div>
+					</div></div><div class="owl-item" style="width: 195px;"><div class="owl-item" style="width: 195px;">
+						<div class="col-md-2">
+							<img src="{% static 'site/img/partners/hadoop-logo.png' %}" alt="hadoop" width="170" height="60">
+						</div>
+					</div></div></div></div>
+					</div><!-- /slider-partners -->
+
+			</div><!-- /row -->
+
+		</div><!-- /container -->
+
+  </section>
+
+<a class="to-top"></a>
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'site/js/jquery.min.js' %}"></script>
+<script src="{% static 'owl/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'site/js/jquery.toTop.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        $(function(){
+            $('#owl-demo').owlCarousel({
+                items: 1,
+                autoPlay: true,
+                stopOnHover: true
+            });
+        });
+
+        $('.to-top').toTop({
+        //options with default values
+            autohide: true,
+            offset: 420,
+            speed: 500,
+            right: 0,
+            bottom: 100
+        });
+
+        /*$('.SITEbase-leftUL-navbar > li').click(function () {
+
+            $('.SITEbase-leftUL-navbar > li').removeClass('active');
+            $(this).addClass('active');
+        });
+        */
+
+    });
+</script>
+{% endblock scripts %}
+

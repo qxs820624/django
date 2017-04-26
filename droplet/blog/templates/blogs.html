@@ -1,0 +1,69 @@
+{% extends "blogbase_black_timeline.html" %}
+{% load staticfiles %}
+
+{% block navbar-left %}
+{% include "_navbar.html" %}
+{% endblock %}
+{% block navbar-right %}
+
+{% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+{% else %}
+{{ block.super }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="blogs">
+<!--<div>{ { request }}</div>-->
+	{% for blog in blogs %}
+	<div id="index_view">
+	<li><div>分类：{{ blog.classification }}</div></li>
+	<li><div>发表时间：{{ blog.publish_time|date:"Y-m-d H:i" }}</div></li>
+	<li><div class="blog_info2"><span class="blog_info2_list"><span class="li_small_2">标签：
+	{% for tag in blog.tags.all %}
+	{{ tag.tag_name }}
+	{% endfor %}
+	</span></span></div></li>
+	<li>
+		<div class="arrow_box">
+			<div class="ti"></div>
+			<input type='hidden' name='blog_title' value='{{ blog.title }}'/>
+			<input type='hidden' name='blog_author' value='{{ blog.blog_author }}'/>
+			<!--三角形-->
+			<div class="ci"></div>
+			<!--圆形-->
+			<!--Reverse for 'blog.articles' with arguments '(1,)' and keyword arguments '{}' not found. 0 pattern(s) tried: []-->
+			<h2 class="title"><a href="{% url 'blog:article' blog.id %}" target="_blank" method='post'>{{ blog.title }}</a></h2>
+			<ul class="textinfo">
+			<a href="{% url 'blog:article_author' blog.blog_author %}"><img src="{{ blog.blog_imgurl }}"></a>
+			<p> {{ blog.body }}</p>
+			</ul>
+			<ul class="details">
+			<li class="likes"><a href="#">10</a></li>
+			<li class="comments"><a href="#">34</a></li>
+			<li class="icon-time"><a href="#">{{ blog.timestamp }}</a></li>
+			</ul>
+		</div>
+	<!--arrow_box end--> 
+	</li>
+	</div><!--index_view end-->
+	{% endfor%}
+	<div class="card">
+		<h1>About Me</h1>
+		<p>网名：{{ reuset.user.nickname }}</p>
+		<p>职业：{{ reuset.user.work }}</p>
+		<p>公司：{{ reuset.user.company }}</p>
+		<p>Email：{{ reuset.user.email }}</p>
+		<h1></h1>
+	<ul class="linkmore">
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="talk" title="给我留言"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="address" title="联系地址"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="email" title="给我写信"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="photos" title="生活照片"></a></li>
+		<li><a href="{{ settings.SITE_BASE_URL }}/" class="heart" title="关注我"></a></li>
+	</ul>
+	</div>
+</div><!--class blogs end-->
+{% endblock %}

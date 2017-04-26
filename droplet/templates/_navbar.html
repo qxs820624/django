@@ -1,0 +1,5 @@
+<li {% if active_link == "Home" %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+<li {% if active_link == "Applications" %}class="active"{% endif %}><a href="{% url 'applications:product_list' %}">Applications</a></li>
+<li {% if active_link == "Price" %}class="active"{% endif %}><a href="{% url 'price' %}">Price</a></li>
+<li {% if active_link == "Network" %}class="active"{% endif %}><a href="{% url 'network' %}">Network</a></li>
+<li {% if active_link == "About" %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>

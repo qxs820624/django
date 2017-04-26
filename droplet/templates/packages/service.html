@@ -1,0 +1,38 @@
+{% extends "packages/package_base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}your service{% endblock %}
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+
+
+{% block panel_right %}
+    {% if service %}
+        <table class="table table-bordered">
+        <caption class="text-center">YOUR SERVICE</caption>
+        <tr>
+    <th>Name</th>
+    <th>Product</th>
+    <th>Plan</th>
+    <th>Status</th>
+  </tr><!--table head-->
+            {% for package in service %}
+      <tr>
+        <td>{{ package.name }}</td>
+        <td>{{ package.product_id.name }}</td>
+        <td>{{ package.plan_id.name }}</td>
+        <td>{{ package.status }}</td>
+      </tr>
+  {% endfor %}
+        </table>
+    {% else %}
+        <H1>You have no service ,<a href="#">want to have one?</a></H1>
+    {% endif %}
+{% endblock %}
+

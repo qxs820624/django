@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load rank %}
+{% load django_tables2 %}
+
+{% block title %}{{ block.super }}My Console{% endblock %}
+
+{% block style %}
+    .table-container{
+        width:1200px;
+    }
+{% endblock style %}
+
+<!-- style -->
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+{% endblock styles %}
+
+
+{% block navbar-left %}
+  {% include "_navbar.html" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<li><a  href="{% url 'accounts:login' %}" >Log in</a></li>
+<li><a  href="{% url 'accounts:signup' %}" >Sigh Up</a></li>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+
+{% block container %}
+
+<!-- title -->
+<div class="container appContainer">
+    {{ block.super }}
+    <h3>Manage Orders</h3>
+    <form id="searchform" action="{% url 'panel:orders' %}" method="get" accept-charset="utf-8">
+      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
+      <select name="s_value">
+          {% for s,val in status.items %}
+            <option {{ val }} >{{ s }}</option>
+          {% endfor %}
+      </select>
+      <button class="searchbutton" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <br/>
+    {% render_table table "django_tables2/semantic.html" %}
+    <br/>
+    <form id="manuform" action="{% url 'panel:orders' %}" class="form-inline" method="post" accept-charset="utf-8">
+        {% csrf_token %}
+        <div class="form-group">
+            <button id = "accept" class="btn btn-primary" type="submit">Accept Order</button>
+        </div>
+         <div class="form-group">
+            <button id = "cancel" class="btn btn-warning" type="submit">Cancel Order</button>
+        </div>
+        <div class="form-group">
+            <button id = "delete" class="btn btn-danger" type="submit">Delete Order</button>
+        </div>
+    </form>
+</div>
+{% endblock container %}
+
+
+{% block footer %}
+    </br>
+    </br>
+    {% include "_footer.html" %}
+{% endblock %}
+

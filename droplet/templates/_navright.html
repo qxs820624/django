@@ -1,0 +1,37 @@
+{% load thumbnail %}
+
+{% if user.is_authenticated %}
+  <li class="dropdown dropbar">
+  <a href="#" class="dropdown-toggle profile-menu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+<img src="{% thumbnail user.profile.picture|default:'default_profile.png' 30x30 crop %}" alt="" />
+{{ user.get_full_name|truncatechars:20 }}
+<span class="caret"></span>
+</a>
+
+    <ul class="dropdown-menu dropdown-list" role="menu">
+      {% if user.is_superuser %}
+        <li><a href = "/admin/applications/">Admin Console</a></li>
+        <li><a href = "{% url 'panel:console' %}">Staff Console</a></li>
+        <li><a href = "/crud/packages/packages/">Order Management</a></li>
+        <li><a href = "{% url 'helpdesk_home' %}">Ticket Management</a></li>
+        <li><a href="/crud/authtools/users/">Client Management</a></li>
+        <li class="divider"></li>
+    {% elif perms.authtools.can_display_client_panel %}
+        <li><a href = "{% url 'panel:console' %}">My Console</a></li>
+        <li><a href = "{% url 'helpdesk_home' %}">My Ticket</a></li>
+        <li><a href = "/crud/packages/packages/">My Order</a></li>
+        <li class="divider"></li>
+    {% elif perms.authtools.can_display_staff_panel %}
+        <li><a href = "{% url 'panel:console' %}">Staff Console</a></li>
+        {# <li><a href = "{% url 'panel:orders' %}">Order Management</a></li>#}
+        <li><a href = "/crud/packages/packages/">Order Management</a></li>
+        <li><a href = "{% url 'helpdesk_home' %}">Ticket Management</a></li>
+        <li><a href="/crud/authtools/users/">Client Management</a></li>
+        <li class="divider"></li>
+    {% endif %}
+      {#<li><a href="{% url 'helpdesk_home' %}">Ticket</a></li>  the source code url name is helpdesk_home #}
+      {#<li><a href="{% url 'profiles:show_self' %}">Profile</a></li>#}
+      <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+    </ul>
+  </li>
+{% endif %}

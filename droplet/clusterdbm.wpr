@@ -1,0 +1,53 @@
+#!wing
+#!version=6.0
+##################################################################
+# Wing IDE project file                                          #
+##################################################################
+[project attributes]
+console.toolbox = [{'autosave': False,
+                    'cmd': 'python manage.py startapp blog',
+                    'env': ('project',
+                            [u'']),
+                    'hostname': ('project',
+                                 None),
+                    'id': 'cmd-6oq9zCQ3NzcBltBl',
+                    'io_encoding': None,
+                    'key_binding': '',
+                    'line_mode': True,
+                    'pseudo_tty': False,
+                    'pypath': ('project',
+                               u''),
+                    'raise_panel': True,
+                    'rundir': ('project',
+                               u''),
+                    'title': 'startapp'}]
+debug.launch-configs = (2,
+                        {'launch-74uWCER8Oqtq9asv': ({},
+        {'buildcmd': ('project',
+                      ('',
+                       '')),
+         'env': ('project',
+                 []),
+         'name': u'Launch manage.py',
+         'pyexec': ('project',
+                    ''),
+         'pypath': ('project',
+                    ''),
+         'pyrunargs': ('project',
+                       '-u'),
+         'runargs': 'runserver 8000',
+         'rundir': ('project',
+                    '')})})
+proj.debug-sub-processes = True
+proj.directory-list = [{'dirloc': loc('..'),
+                        'excludes': (),
+                        'filter': '*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
+proj.file-type = 'shared'
+proj.launch-config = {loc('../manage.py'): ('custom',
+        (u'',
+         'launch-74uWCER8Oqtq9asv'))}
+proj.main-file = loc('../manage.py')
+testing.test-framework = {loc('../manage.py'): ':internal djangotest'}

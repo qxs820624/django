@@ -1,0 +1,118 @@
+
+{% load comments i18n crispy_forms_tags %}
+<!--add markdown editor-->
+{% load dractags %}
+
+<!-- style -->
+{% block styles %}
+<style type="text/css">
+/*star1*/
+body,div,ul,li,p{margin:0;padding:0;}
+body{color:#666;font:12px/1.5 Arial;}
+ul{list-style-type:none;}
+#star{position:relative;width:600px;margin:10px auto;}
+#star ul,#star span{float:left;display:inline;height:19px;line-height:19px;}
+#star ul{margin:0 10px;}
+#star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(/static/site/img/products/review/star.png) no-repeat;}
+#star strong{color:#f60;padding-left:10px;}
+#star li.on{background-position:0 -28px;}
+#star p{position:absolute;top:20px;width:159px;height:60px;display:none;background:url(/static/site/img/products/review/icon.gif) no-repeat;padding:7px 10px 0;}
+#star p em{color:#f60;display:block;font-style:normal;}
+</style>
+{% endblock styles %}
+
+<!-- Comments Form -->
+<div id="wrap-form-comment">
+<div id="form-comment">
+	<h4>Leave a Comment:</h4>
+	<div id='new_comment' class="col-lg-6">
+		<form action="{% url 'comments:save_comments' product.name %}" method='post'>
+			{% csrf_token %}
+			<input type="hidden" name="rating" id="id_rating">
+			<p><label for="id_rating">Rating：</label></p>
+			<div id="star">
+			<span>Click the stars to rate</span>
+			<ul>
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+			</ul>
+			<span></span>
+			<p></p>
+			</div>
+			<p><label for="id_comment">comment：</label></p>
+			<p><textarea id="id_comment" rows="10" cols="40" name="comment"></textarea></p>
+			<p style="display:none;"><label for="id_honeypot">  If not empty in this filed, it will be traed as spam</label> <input type="text" name="honeypot" id="id_honeypot"></p>
+			<input class="btn btn-primary" name="post" value="comment" type="submit" />
+			<button id="cancel_reply" type="button" class="btn btn-default">Cancel Reply</button>
+			<!--next action-->
+			<input type='hidden' name='next' value='{% url "applications:product_detail" product.name %}'/>
+			{{ field_name|safe_markdown }}
+			{{ post.description|safe_markdown }}
+		</form></div>
+	</form>
+</div>
+</div>
+
+{% block scripts %}
+<script>
+window.onload = function ()
+{
+	var oStar = document.getElementById("star");
+	var rating = document.getElementById("id_rating");
+	var aLi = oStar.getElementsByTagName("li");
+	var oUl = oStar.getElementsByTagName("ul")[0];
+	var oSpan = oStar.getElementsByTagName("span")[1];
+	var oP = oStar.getElementsByTagName("p")[0];
+	var i = iScore = iStar = 0;
+	var aMsg = [
+				"Unsatisfied|Not as expected, very disappointed",
+				"Bad|Not as expected",
+				"Fair|Just okay",
+				"Good|I like it",
+				"Great|Extremely satisfied and impressive"
+				]
+	
+	for (i = 1; i <= aLi.length; i++)
+	{
+		aLi[i - 1].index = i;
+		//鼠标移过显示分数
+		aLi[i - 1].onmouseover = function ()
+		{
+			fnPoint(this.index);
+			//浮动层显示
+			oP.style.display = "block";
+			//计算浮动层位置
+			oP.style.left = oUl.offsetLeft + this.index * this.offsetWidth - 104 + "px";
+			//匹配浮动层文字内容
+			oP.innerHTML = "<em><b>" + this.index + "</b> Point(s)" + aMsg[this.index - 1].match(/(.+)\|/)[1] + "</em>" + aMsg[this.index - 1].match(/\|(.+)/)[1]
+		};
+		//鼠标离开后恢复上次评分
+		aLi[i - 1].onmouseout = function ()
+		{
+			fnPoint();
+			//关闭浮动层
+			oP.style.display = "none"
+		};
+		//点击后进行评分处理
+		aLi[i - 1].onclick = function ()
+		{
+			iStar = this.index;
+			oP.style.display = "none";
+			oSpan.innerHTML = "<strong>" + (this.index) + " Point(s)</strong> (" + aMsg[this.index - 1].match(/\|(.+)/)[1] + ")"
+			rating.value = this.index;
+		}
+	}
+	//评分处理
+	function fnPoint(iArg)
+	{
+		//分数赋值
+		iScore = iArg || iStar;
+		for (i = 0; i < aLi.length; i++) aLi[i].className = i < iScore ? "on" : "";	
+	}
+};
+</script>
+
+{% endblock scripts %}

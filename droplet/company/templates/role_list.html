@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <table>
+      <tr>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Gender</td>
+      </tr>
+      {% for role_obj in role_obj %}
+      <tr>
+          <td>{{ role_obj.name }}</td>
+          <td>{{ role_obj.age }}</td>
+          <td>{{ role_obj.get_gender_display }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+</body>
+</html>

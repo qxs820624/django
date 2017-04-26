@@ -1,0 +1,35 @@
+#!wing
+#!version=6.0
+##################################################################
+# Wing IDE project file                                          #
+##################################################################
+[project attributes]
+debug.launch-configs = (2,
+                        {'launch-UbKua6MIzt2W4nzU': ({},
+        {'buildcmd': ('project',
+                      None),
+         'env': ('project',
+                 [u'']),
+         'name': u'Launch manage.py',
+         'pyexec': ('project',
+                    u''),
+         'pypath': ('project',
+                    u''),
+         'pyrunargs': ('project',
+                       '-u'),
+         'runargs': u'runserver 80',
+         'rundir': ('project',
+                    u'')})})
+proj.debug-sub-processes = True
+proj.directory-list = [{'dirloc': loc('..'),
+                        'excludes': (),
+                        'filter': '*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
+proj.file-type = 'shared'
+proj.launch-config = {loc('../manage.py'): ('custom',
+        (u'',
+         'launch-UbKua6MIzt2W4nzU'))}
+proj.main-file = loc('../manage.py')
+testing.test-framework = {loc('../manage.py'): ':internal djangotest'}

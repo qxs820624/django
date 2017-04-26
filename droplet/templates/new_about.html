@@ -1,0 +1,47 @@
+{% extends "new_base.html" %}
+{% load staticfiles %}
+
+{% block main-content %}
+<!--about-banner-->
+<div class="about-banner">
+    <!--banner-->
+    <figure class="about-top-figure">
+        <picture>
+          <source media = "(max-width:768px)" srcset = "imgs/windows-vps-small.png">
+          <img src="{% static 'site/img/aboutBK.png' %}" />
+          <ul class="SITEimg-titile">
+            <li><a href="#datab-mlls"> LLC</a></li>
+            <li><a href="#offic-address">Office Address</a></li>
+          </ul>
+        </picture>
+      </figure>
+  </div><!--main end-->
+<!--about-content-->
+<div class="about-container">
+  <div class="damLLS-content">
+    <h3 id="datab-mlls"> LLC</h3>
+    <ul>
+      <li> is a division of <a href="#"> LLC</a>.</li>
+      <li>We are focused on <a href="#">Microsoft Windows hosting and SQL Server hosting</a>. This specific focus provides a professional and reliable database hosting and Web hosting service with superb technical support and customer service at <a href="#">reasonable prices</a>.</li>
+      <li> LLC is attentive to its worldwide customers' needs seeking new and forward thinking solutions and development options.</li>
+    </ul>
+    <div class="img-wrap">
+      <ul>
+        <li><img src="{% static 'site/img/NetworkImg/Dallas_Datacenter.gif' %}" /></li>
+        <li><img src="{% static 'site/img/NetworkImg/Dallas_Facility.gif' %}" /></li>
+        <li><img src="{% static 'site/img/NetworkImg/Dallas_Cooling.gif' %}" /></li>
+        <li><img src="{% static 'site/img/NetworkImg/Dallas_Support.gif' %}" /></li>
+      </ul>
+    </div>
+    <p> LLC was founded in 2005 and is a privately held company based in Texas, USA.</p>
+  </div>
+  <div class="address-content">
+    <h3 id="offic-address">Office Address</h3>
+    <div class="address-wrap">
+      <p>7017 Weis Drive Galveston, Texas 77551 USA</p>
+      <img src="{% static 'site/img/address.png' %}"/>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

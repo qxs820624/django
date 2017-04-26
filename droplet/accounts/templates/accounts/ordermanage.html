@@ -1,0 +1,18 @@
+{% extends "accounts/panel_base.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ block.super }}Order Manage{% endblock %}
+{% block styles %}
+	{{ block.super }}
+	<link href="{% static 'site/css/ApplicationsPage.css' %}" rel="stylesheet">
+	<link href="{% static 'site/css/jquery-ui.min.css' %}" rel="stylesheet">
+
+{% endblock styles %}
+
+
+
+{% block panel_right %}
+    {{ user }}
+{% endblock %}
+
